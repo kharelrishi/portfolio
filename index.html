@@ -1,20 +1,28 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark" data-lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rishiram Kharel — Supply Chain & Logistics</title>
+  <title data-en="Rishiram Kharel — Supply Chain & Logistics" data-de="Rishiram Kharel — Supply Chain & Logistik">Rishiram Kharel — Supply Chain & Logistics</title>
   <meta name="description" content="Rishiram Kharel — supply chain and logistics operations professional in NRW, Germany. Sourcing, shipping, inventory and ERP/WMS, with data analysis in Power BI.">
   <meta property="og:title" content="Rishiram Kharel — Supply Chain & Logistics">
   <meta property="og:description" content="From sourcing in Nepal to warehouse floors in Germany — with Power BI to show what is happening.">
   <meta property="og:image" content="sales-overview.jpg">
   <meta name="theme-color" content="#0b1524">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="alternate" hreflang="en" href="?lang=en">
+  <link rel="alternate" hreflang="de" href="?lang=de">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script>document.documentElement.classList.add('js')</script>
+  <script>(function(){var d=document.documentElement,th,lg;d.classList.add('js');
+try{th=localStorage.getItem('rk-theme');lg=localStorage.getItem('rk-lang');}catch(e){}
+if(th!=='light'&&th!=='dark'){th=window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}
+var q=null;try{q=new URLSearchParams(location.search).get('lang');}catch(e){}
+if(q==='de'||q==='en'){lg=q;}
+if(lg!=='de'&&lg!=='en'){lg=(navigator.language||'').toLowerCase().indexOf('de')===0?'de':'en';}
+d.setAttribute('data-theme',th);d.setAttribute('data-lang',lg);d.lang=lg;})();</script>
 </head>
 <body>
 
@@ -24,15 +32,24 @@
       <img src="favicon.svg" alt="" width="34" height="34">
       <span>Rishiram Kharel<small>SUPPLY CHAIN · LOGISTICS · DATA</small></span>
     </a>
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
     <ul class="nav-links" id="navLinks" data-open="false">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a class="nav-cta" href="#contact">Contact</a></li>
+      <li><a href="#about"><span data-l="en">About</span><span data-l="de" lang="de">Über mich</span></a></li>
+      <li><a href="#experience"><span data-l="en">Experience</span><span data-l="de" lang="de">Erfahrung</span></a></li>
+      <li><a href="#projects"><span data-l="en">Projects</span><span data-l="de" lang="de">Projekte</span></a></li>
+      <li><a href="#skills"><span data-l="en">Skills</span><span data-l="de" lang="de">Kompetenzen</span></a></li>
+      <li><a href="#education"><span data-l="en">Education</span><span data-l="de" lang="de">Ausbildung</span></a></li>
+      <li><a class="nav-cta" href="#contact"><span data-l="en">Contact</span><span data-l="de" lang="de">Kontakt</span></a></li>
     </ul>
+    <div class="nav-right">
+      <div class="controls">
+        <div class="lang-switch" role="group" aria-label="Language / Sprache">
+          <button type="button" data-set-lang="en" aria-pressed="true" title="English">EN</button>
+          <button type="button" data-set-lang="de" aria-pressed="false" title="Deutsch">DE</button>
+        </div>
+        <button class="theme-toggle" type="button" id="themeToggle" aria-label="Toggle light and dark mode" title="Light / dark"><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks"><span data-l="en">Menu</span><span data-l="de" lang="de">Menü</span></button>
+    </div>
   </nav>
 </header>
 
@@ -42,50 +59,44 @@
   <section class="hero" aria-labelledby="heroTitle">
     <div class="wrap hero-grid">
       <div>
-        <span class="status-pill"><span class="dot"></span>Open to full-time roles · NRW &amp; remote</span>
-        <h1 id="heroTitle">I keep goods, stock and data <em>moving.</em></h1>
-        <p class="lead">I'm Rishiram — a supply chain and logistics professional based in Mülheim an der Ruhr. I coordinate sourcing and international shipping today, ran warehouse operations in ERP/WMS for three and a half years, and build Power BI reports that show where the flow breaks.</p>
+        <span class="status-pill"><span class="dot"></span><span data-l="en">Open to full-time roles · NRW &amp; remote</span><span data-l="de" lang="de">Offen für Vollzeitstellen · NRW &amp; remote</span></span>
+        <h1 id="heroTitle"><span data-l="en">I keep goods, stock and data <em>moving.</em></span><span data-l="de" lang="de">Ich halte Waren, Bestände und Daten <em>in Bewegung.</em></span></h1>
+        <p class="lead"><span data-l="en">I'm Rishiram — a supply chain and logistics professional based in Mülheim an der Ruhr. I coordinate sourcing and international shipping today, ran warehouse operations in ERP/WMS for three and a half years, and build Power BI reports that show where the flow breaks.</span><span data-l="de" lang="de">Ich bin Rishiram — Supply-Chain- und Logistikprofi aus Mülheim an der Ruhr. Heute koordiniere ich Beschaffung und internationalen Versand, davor habe ich dreieinhalb Jahre Lagerprozesse im ERP/WMS gesteuert — und ich baue Power-BI-Berichte, die zeigen, wo der Warenfluss stockt.</span></p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#projects">
-            View projects
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <a class="btn btn-ghost" href="Rishiram_Kharel_CV.pdf" download>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
-            Download CV
-          </a>
+          <a class="btn btn-primary" href="#projects"><span data-l="en">View projects</span><span data-l="de" lang="de">Projekte ansehen</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-ghost" data-l="en" href="Rishiram_Kharel_CV.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download CV</a><a class="btn btn-ghost" data-l="de" href="Rishiram_Kharel_Lebenslauf.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Lebenslauf (PDF)</a>
         </div>
         <div class="hero-meta">
           <span>SAP S/4HANA · MM</span>
           <span>ERP / WMS</span>
           <span>Power BI &amp; DAX</span>
-          <span>German B2 · English C1</span>
+          <span><span data-l="en">German B2 · English C1</span><span data-l="de" lang="de">Deutsch B2 · Englisch C1</span></span>
         </div>
       </div>
 
       <aside class="label-card" aria-label="Profile summary styled as a shipping label">
         <div class="label-head">
-          <strong>PRIORITY</strong>
+          <strong><span data-l="en">PRIORITY</span><span data-l="de" lang="de">PRIORITÄT</span></strong>
           <span>AWB RK-0925-NRW</span>
         </div>
-        <div class="label-route" aria-label="From Kathmandu to Mülheim an der Ruhr">
+        <div class="label-route" aria-label="Kathmandu → Mülheim an der Ruhr">
           <span>KTM</span><span class="arrow"></span><span>MÜL</span>
         </div>
         <div class="label-row">
-          <div><span class="label-k">Shipper</span><span class="label-v">Rishiram Kharel</span></div>
-          <div><span class="label-k">Consignee</span><span class="label-v">Your operations team</span></div>
+          <div><span class="label-k"><span data-l="en">Shipper</span><span data-l="de" lang="de">Absender</span></span><span class="label-v">Rishiram Kharel</span></div>
+          <div><span class="label-k"><span data-l="en">Consignee</span><span data-l="de" lang="de">Empfänger</span></span><span class="label-v"><span data-l="en">Your operations team</span><span data-l="de" lang="de">Ihr Operations-Team</span></span></div>
         </div>
         <div class="label-row">
-          <div><span class="label-k">Contents</span><span class="label-v">Logistics ops · Inventory control · Supplier coordination</span></div>
-          <div><span class="label-k">Handling</span><span class="label-v">ERP/WMS · SAP · Power BI · Excel</span></div>
+          <div><span class="label-k"><span data-l="en">Contents</span><span data-l="de" lang="de">Inhalt</span></span><span class="label-v"><span data-l="en">Logistics ops · Inventory control · Supplier coordination</span><span data-l="de" lang="de">Logistik · Bestandsführung · Lieferantenkoordination</span></span></div>
+          <div><span class="label-k"><span data-l="en">Handling</span><span data-l="de" lang="de">Handhabung</span></span><span class="label-v">ERP/WMS · SAP · Power BI · Excel</span></div>
         </div>
         <div class="label-row">
-          <div><span class="label-k">Current hub</span><span class="label-v">Mülheim an der Ruhr, DE</span></div>
-          <div><span class="label-k">Languages</span><span class="label-v">EN C1 · DE B2 · NE native</span></div>
+          <div><span class="label-k"><span data-l="en">Current hub</span><span data-l="de" lang="de">Aktueller Standort</span></span><span class="label-v">Mülheim an der Ruhr, DE</span></div>
+          <div><span class="label-k"><span data-l="en">Languages</span><span data-l="de" lang="de">Sprachen</span></span><span class="label-v"><span data-l="en">EN C1 · DE B2 · NE native</span><span data-l="de" lang="de">EN C1 · DE B2 · NE Muttersprache</span></span></div>
         </div>
         <div class="barcode" aria-hidden="true"></div>
         <div class="barcode-num" aria-hidden="true"><span>4 5468</span><span>2025</span><span>0 0 0 1</span></div>
-        <span class="stamp">READY TO SHIP</span>
+        <span class="stamp"><span data-l="en">READY TO SHIP</span><span data-l="de" lang="de">VERSANDBEREIT</span></span>
       </aside>
     </div>
   </section>
@@ -94,12 +105,12 @@
   <div class="route" aria-label="Career route">
     <div class="wrap route-inner">
       <div class="route-track">
-        <div class="stop"><div class="pin"></div><span class="when">2013 – 2018</span><span class="where">Pokhara · Kathmandu</span><span class="what">BBA, then marketing lead</span></div>
-        <div class="stop"><div class="pin"></div><span class="when">2019 – 2021</span><span class="where">Rheinberg · Krefeld</span><span class="what">Amazon fulfilment</span></div>
-        <div class="stop"><div class="pin"></div><span class="when">2021 – 2024</span><span class="where">Kamp-Lintfort</span><span class="what">Warehouse ops, ERP/WMS</span></div>
-        <div class="stop"><div class="pin"></div><span class="when">2023 – 2027</span><span class="where">Rhine-Waal Univ.</span><span class="what">M.Sc. International Mgmt</span></div>
-        <div class="stop"><div class="pin"></div><span class="when">2025 – now</span><span class="where">The Hague (remote)</span><span class="what">Business operations</span></div>
-        <div class="stop next"><div class="pin"></div><span class="when">Next stop</span><span class="where">Your company</span><span class="what">Supply chain · logistics</span></div>
+        <div class="stop"><div class="pin"></div><span class="when">2013 – 2018</span><span class="where">Pokhara · Kathmandu</span><span class="what"><span data-l="en">BBA, then marketing lead</span><span data-l="de" lang="de">BBA, dann Marketingleitung</span></span></div>
+        <div class="stop"><div class="pin"></div><span class="when">2019 – 2021</span><span class="where">Rheinberg · Krefeld</span><span class="what"><span data-l="en">Amazon fulfilment</span><span data-l="de" lang="de">Amazon Fulfillment</span></span></div>
+        <div class="stop"><div class="pin"></div><span class="when">2021 – 2024</span><span class="where">Kamp-Lintfort</span><span class="what"><span data-l="en">Warehouse ops, ERP/WMS</span><span data-l="de" lang="de">Lagerlogistik, ERP/WMS</span></span></div>
+        <div class="stop"><div class="pin"></div><span class="when">2023 – 2027</span><span class="where"><span data-l="en">Rhine-Waal Univ.</span><span data-l="de" lang="de">Hochschule Rhein-Waal</span></span><span class="what"><span data-l="en">M.Sc. International Mgmt</span><span data-l="de" lang="de">M.Sc. International Management</span></span></div>
+        <div class="stop"><div class="pin"></div><span class="when"><span data-l="en">2025 – now</span><span data-l="de" lang="de">2025 – heute</span></span><span class="where"><span data-l="en">The Hague (remote)</span><span data-l="de" lang="de">Den Haag (remote)</span></span><span class="what">Business Operations</span></div>
+        <div class="stop next"><div class="pin"></div><span class="when"><span data-l="en">Next stop</span><span data-l="de" lang="de">Nächster Halt</span></span><span class="where"><span data-l="en">Your company</span><span data-l="de" lang="de">Ihr Unternehmen</span></span><span class="what"><span data-l="en">Supply chain · logistics</span><span data-l="de" lang="de">Supply Chain · Logistik</span></span></div>
       </div>
     </div>
   </div>
@@ -108,32 +119,32 @@
   <section id="about" aria-labelledby="aboutTitle">
     <div class="wrap">
       <div class="stats reveal">
-        <div class="stat"><b>3.5 yrs</b><span>warehouse operations in ZeyOS ERP/WMS, including team leadership</span></div>
-        <div class="stat"><b>2</b><span>continents connected — sourcing in Nepal, customers across Europe</span></div>
-        <div class="stat"><b>54</b><span>DAX measures in my latest Power BI report, all tested</span></div>
-        <div class="stat"><b>1.2</b><span>BBA final grade on the German scale (Dean's List)</span></div>
+        <div class="stat"><b><span data-l="en">3.5 yrs</span><span data-l="de" lang="de">3,5 J.</span></b><span><span data-l="en">warehouse operations in ZeyOS ERP/WMS, including team leadership</span><span data-l="de" lang="de">Lagerlogistik im ZeyOS ERP/WMS, inklusive Teamführung</span></span></div>
+        <div class="stat"><b>2</b><span><span data-l="en">continents connected — sourcing in Nepal, customers across Europe</span><span data-l="de" lang="de">Kontinente verbunden — Beschaffung in Nepal, Kunden in ganz Europa</span></span></div>
+        <div class="stat"><b>54</b><span><span data-l="en">DAX measures in my latest Power BI report, all tested</span><span data-l="de" lang="de">DAX-Measures in meinem aktuellen Power-BI-Bericht, alle geprüft</span></span></div>
+        <div class="stat"><b><span data-l="en">1.2</span><span data-l="de" lang="de">1,2</span></b><span><span data-l="en">BBA final grade on the German scale (Dean's List)</span><span data-l="de" lang="de">BBA-Abschlussnote nach deutscher Skala (Dean's List)</span></span></div>
       </div>
 
       <div class="about-grid" style="margin-top: clamp(48px, 7vw, 80px);">
         <div class="about-text reveal">
           <div class="section-head">
-            <span class="num">01 / About</span>
-            <h2 id="aboutTitle">Operations first, then the data behind them.</h2>
+            <span class="num">01 / <span data-l="en">About</span><span data-l="de" lang="de">Über mich</span></span>
+            <h2 id="aboutTitle"><span data-l="en">Operations first, then the data behind them.</span><span data-l="de" lang="de">Erst die Praxis, dann die Daten dahinter.</span></h2>
           </div>
-          <p>I started on the floor. At <strong>Amazon</strong> I scanned, sorted and shipped at fulfilment-centre speed. At <strong>Ballsportdirekt.de</strong> (11teamsports Group) I spent three and a half years booking goods receipts and stock movements in ZeyOS ERP/WMS, running cycle counts, clearing discrepancies — and eventually onboarding and training the team.</p>
-          <p>Today, as <strong>Business Operations Coordinator at Ramro Imports B.V.</strong>, I work on the other side of the chain: coordinating producers in Nepal, international shipments to the Netherlands and B2B orders across Europe — prices, quantities, quality, documents and delivery dates.</p>
-          <p>Along the way I learned that most supply-chain problems show up in the data first. So I trained in <strong>SAP S/4HANA</strong> (Sourcing &amp; Procurement, MM) and build reporting in <strong>Excel and Power BI</strong> to catch them early. My M.Sc. in International Management &amp; Psychology is complete apart from the thesis.</p>
+          <p><span data-l="en">I started on the floor. At <strong>Amazon</strong> I scanned, sorted and shipped at fulfilment-centre speed. At <strong>Ballsportdirekt.de</strong> (11teamsports Group) I spent three and a half years booking goods receipts and stock movements in ZeyOS ERP/WMS, running cycle counts, clearing discrepancies — and eventually onboarding and training the team.</span><span data-l="de" lang="de">Angefangen habe ich direkt in der Halle. Bei <strong>Amazon</strong> habe ich im Tempo eines Fulfillment-Centers gescannt, sortiert und versendet. Bei <strong>Ballsportdirekt.de</strong> (11teamsports Group) habe ich dreieinhalb Jahre lang Wareneingänge und Warenbewegungen im ZeyOS ERP/WMS gebucht, Inventuren durchgeführt, Differenzen geklärt — und schließlich neue Kolleginnen und Kollegen eingearbeitet und geschult.</span></p>
+          <p><span data-l="en">Today, as <strong>Business Operations Coordinator at Ramro Imports B.V.</strong>, I work on the other side of the chain: coordinating producers in Nepal, international shipments to the Netherlands and B2B orders across Europe — prices, quantities, quality, documents and delivery dates.</span><span data-l="de" lang="de">Heute arbeite ich als <strong>Business Operations Coordinator bei Ramro Imports B.V.</strong> am anderen Ende der Kette: Ich koordiniere Produzenten in Nepal, internationale Sendungen in die Niederlande und B2B-Aufträge in ganz Europa — Preise, Mengen, Qualität, Dokumente und Liefertermine.</span></p>
+          <p><span data-l="en">Along the way I learned that most supply-chain problems show up in the data first. So I trained in <strong>SAP S/4HANA</strong> (Sourcing &amp; Procurement, MM) and build reporting in <strong>Excel and Power BI</strong> to catch them early. My M.Sc. in International Management &amp; Psychology is complete apart from the thesis.</span><span data-l="de" lang="de">Dabei habe ich gelernt: Die meisten Supply-Chain-Probleme zeigen sich zuerst in den Daten. Deshalb habe ich mich in <strong>SAP S/4HANA</strong> (Sourcing &amp; Procurement, MM) weitergebildet und baue Auswertungen in <strong>Excel und Power BI</strong>, um sie früh zu erkennen. Mein M.Sc. in International Management &amp; Psychology ist bis auf die Masterarbeit abgeschlossen.</span></p>
         </div>
 
         <aside class="manifest reveal" aria-label="Quick facts">
-          <div class="manifest-title"><span>Manifest</span><span>RK · 2026</span></div>
+          <div class="manifest-title"><span><span data-l="en">Manifest</span><span data-l="de" lang="de">Frachtliste</span></span><span>RK · 2026</span></div>
           <dl>
-            <div class="row"><dt>Based in</dt><dd>Mülheim an der Ruhr, NRW, Germany</dd></div>
-            <div class="row"><dt>Looking for</dt><dd>Supply chain, logistics, inventory, planning or operations roles — on-site/hybrid in NRW or remote</dd></div>
-            <div class="row"><dt>Strongest at</dt><dd>Goods flow between suppliers, warehouses and carriers; accurate stock data</dd></div>
-            <div class="row"><dt>Systems</dt><dd>SAP S/4HANA, SAP MM, SAP Ariba, ZeyOS ERP/WMS, DHL Business Portal</dd></div>
-            <div class="row"><dt>Analysis</dt><dd>Power BI, DAX, Power Query, Excel modelling, SPSS</dd></div>
-            <div class="row"><dt>Studying</dt><dd>M.Sc. International Management &amp; Psychology · thesis in progress · 03/2027</dd></div>
+            <div class="row"><dt><span data-l="en">Based in</span><span data-l="de" lang="de">Wohnort</span></dt><dd><span data-l="en">Mülheim an der Ruhr, NRW, Germany</span><span data-l="de" lang="de">Mülheim an der Ruhr, NRW, Deutschland</span></dd></div>
+            <div class="row"><dt><span data-l="en">Looking for</span><span data-l="de" lang="de">Ich suche</span></dt><dd><span data-l="en">Supply chain, logistics, inventory, planning or operations roles — on-site/hybrid in NRW or remote</span><span data-l="de" lang="de">Stellen in Supply Chain, Logistik, Bestandsmanagement, Disposition oder Operations — vor Ort/hybrid in NRW oder remote</span></dd></div>
+            <div class="row"><dt><span data-l="en">Strongest at</span><span data-l="de" lang="de">Stärken</span></dt><dd><span data-l="en">Goods flow between suppliers, warehouses and carriers; accurate stock data</span><span data-l="de" lang="de">Warenfluss zwischen Lieferanten, Lagern und Spediteuren; saubere Bestandsdaten</span></dd></div>
+            <div class="row"><dt><span data-l="en">Systems</span><span data-l="de" lang="de">Systeme</span></dt><dd>SAP S/4HANA, SAP MM, SAP Ariba, ZeyOS ERP/WMS, DHL Business Portal</dd></div>
+            <div class="row"><dt><span data-l="en">Analysis</span><span data-l="de" lang="de">Analyse</span></dt><dd><span data-l="en">Power BI, DAX, Power Query, Excel modelling, SPSS</span><span data-l="de" lang="de">Power BI, DAX, Power Query, Excel-Modellierung, SPSS</span></dd></div>
+            <div class="row"><dt><span data-l="en">Studying</span><span data-l="de" lang="de">Studium</span></dt><dd><span data-l="en">M.Sc. International Management &amp; Psychology · thesis in progress · 03/2027</span><span data-l="de" lang="de">M.Sc. International Management &amp; Psychology · Masterarbeit in Bearbeitung · 03/2027</span></dd></div>
           </dl>
         </aside>
       </div>
@@ -144,27 +155,25 @@
   <section id="experience" aria-labelledby="expTitle" style="padding-top: 0;">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="num">02 / Tracking history</span>
-        <h2 id="expTitle">Where I've been handling freight.</h2>
-        <p class="lead">Newest checkpoint first — each stop added a different part of the supply chain.</p>
+        <span class="num">02 / <span data-l="en">Tracking history</span><span data-l="de" lang="de">Sendungsverlauf</span></span>
+        <h2 id="expTitle"><span data-l="en">Where I've been handling freight.</span><span data-l="de" lang="de">Wo ich bisher Fracht bewegt habe.</span></h2>
+        <p class="lead"><span data-l="en">Newest checkpoint first — each stop added a different part of the supply chain.</span><span data-l="de" lang="de">Neuester Halt zuerst — jede Station hat einen anderen Teil der Lieferkette ergänzt.</span></p>
       </div>
 
       <div class="tracking">
+
         <article class="checkpoint reveal">
           <span class="node" aria-hidden="true"></span>
           <div class="cp-card">
             <div class="cp-top">
-              <h3>Business Operations Coordinator <span class="cp-status">In transit</span></h3>
-              <span class="cp-when">Jan 2025 – Present</span>
+              <h3><span data-l="en">Business Operations Coordinator</span><span data-l="de" lang="de">Business Operations Coordinator</span> <span class="cp-status"><span data-l="en">In transit</span><span data-l="de" lang="de">Unterwegs</span></span></h3>
+              <span class="cp-when"><span data-l="en">Jan 2025 – Present</span><span data-l="de" lang="de">Jan. 2025 – heute</span></span>
             </div>
-            <p class="cp-org">Ramro Imports B.V. — The Hague, Netherlands (Remote)</p>
+            <p class="cp-org"><span data-l="en">Ramro Imports B.V. — The Hague, Netherlands (Remote)</span><span data-l="de" lang="de">Ramro Imports B.V. — Den Haag, Niederlande (Remote)</span></p>
             <ul>
-              <li>Coordinate procurement and supplier relationships with producers in Nepal (Fairtrade, textile, craft and hemp products) — aligning prices, quantities, quality and delivery dates.</li>
-              <li>Run international shipping from Nepal to the Netherlands with logistics partners, including shipping and trade documents; track shipments and resolve delays.</li>
-              <li>Manage B2B orders for customers across the Netherlands and Europe, matching demand to available stock.</li>
-              <li>Analyse purchasing, inventory and order data in Excel and Power BI to find inefficiencies and put fixes in place.</li>
+              <li><span data-l="en">Coordinate procurement and supplier relationships with producers in Nepal (Fairtrade, textile, craft and hemp products) — aligning prices, quantities, quality and delivery dates.</span><span data-l="de" lang="de">Koordination von Beschaffung und Lieferantenbeziehungen mit Produzenten in Nepal (Fairtrade-, Textil-, Handwerks- und Hanfprodukte) — Abstimmung von Preisen, Mengen, Qualität und Lieferterminen.</span></li><li><span data-l="en">Run international shipping from Nepal to the Netherlands with logistics partners, including shipping and trade documents; track shipments and resolve delays.</span><span data-l="de" lang="de">Steuerung des internationalen Versands Nepal → Niederlande mit Logistikpartnern inklusive Versand- und Handelsdokumenten; Sendungsverfolgung und Lösung von Verzögerungen.</span></li><li><span data-l="en">Manage B2B orders for customers across the Netherlands and Europe, matching demand to available stock.</span><span data-l="de" lang="de">Abwicklung von B2B-Aufträgen für Kunden in den Niederlanden und Europa — Abgleich von Bedarf und verfügbarem Bestand.</span></li><li><span data-l="en">Analyse purchasing, inventory and order data in Excel and Power BI to find inefficiencies and put fixes in place.</span><span data-l="de" lang="de">Analyse von Einkaufs-, Bestands- und Auftragsdaten in Excel und Power BI, um Ineffizienzen zu finden und Verbesserungen umzusetzen.</span></li>
             </ul>
-            <div class="tags"><span class="tag">Supplier coordination</span><span class="tag">International shipping</span><span class="tag">B2B orders</span><span class="tag">Power BI</span></div>
+            <div class="tags"><span class="tag"><span data-l="en">Supplier coordination</span><span data-l="de" lang="de">Lieferantenkoordination</span></span><span class="tag"><span data-l="en">International shipping</span><span data-l="de" lang="de">Internationaler Versand</span></span><span class="tag"><span data-l="en">B2B orders</span><span data-l="de" lang="de">B2B-Aufträge</span></span><span class="tag">Power BI</span></div>
           </div>
         </article>
 
@@ -172,18 +181,14 @@
           <span class="node" aria-hidden="true"></span>
           <div class="cp-card">
             <div class="cp-top">
-              <h3>Logistics &amp; Warehouse Operations (Working Student)</h3>
-              <span class="cp-when">Jul 2021 – Dec 2024</span>
+              <h3><span data-l="en">Logistics &amp; Warehouse Operations (Working Student)</span><span data-l="de" lang="de">Logistics &amp; Warehouse Operations (Werkstudent)</span></h3>
+              <span class="cp-when"><span data-l="en">Jul 2021 – Dec 2024</span><span data-l="de" lang="de">Juli 2021 – Dez. 2024</span></span>
             </div>
-            <p class="cp-org">11teamsports Group / Ballsportdirekt.de — Kamp-Lintfort, Germany</p>
+            <p class="cp-org"><span data-l="en">11teamsports Group / Ballsportdirekt.de — Kamp-Lintfort, Germany</span><span data-l="de" lang="de">11teamsports Group / Ballsportdirekt.de — Kamp-Lintfort, Deutschland</span></p>
             <ul>
-              <li>Booked stock movements, goods receipts and invoice-related transactions in ZeyOS ERP/WMS, keeping inventory data accurate.</li>
-              <li>Inspected incoming deliveries for quantity, quality and documents, and cleared discrepancies before posting.</li>
-              <li>Ran regular cycle counts and stocktaking; analysed and resolved stock differences.</li>
-              <li>Prepared outbound shipments via DHL Business Customer Portal, BITFLOW and Codematic.</li>
-              <li>Took on team leadership — onboarding, training and performance evaluation.</li>
+              <li><span data-l="en">Booked stock movements, goods receipts and invoice-related transactions in ZeyOS ERP/WMS, keeping inventory data accurate.</span><span data-l="de" lang="de">Buchung von Warenbewegungen, Wareneingängen und rechnungsbezogenen Transaktionen im ZeyOS ERP/WMS; Pflege korrekter Bestandsdaten.</span></li><li><span data-l="en">Inspected incoming deliveries for quantity, quality and documents, and cleared discrepancies before posting.</span><span data-l="de" lang="de">Prüfung eingehender Lieferungen auf Menge, Qualität und Dokumente; Klärung von Abweichungen vor der Buchung.</span></li><li><span data-l="en">Ran regular cycle counts and stocktaking; analysed and resolved stock differences.</span><span data-l="de" lang="de">Regelmäßige Zykluszählungen und Inventuren; Analyse und Klärung von Bestandsdifferenzen.</span></li><li><span data-l="en">Prepared outbound shipments via DHL Business Customer Portal, BITFLOW and Codematic.</span><span data-l="de" lang="de">Versandvorbereitung über das DHL-Geschäftskundenportal, BITFLOW und Codematic.</span></li><li><span data-l="en">Took on team leadership — onboarding, training and performance evaluation.</span><span data-l="de" lang="de">Führungsverantwortung im Team — Einarbeitung, Schulung und Leistungsbeurteilung.</span></li>
             </ul>
-            <div class="tags"><span class="tag">ZeyOS ERP/WMS</span><span class="tag">Goods receipt</span><span class="tag">Cycle counts</span><span class="tag">Team lead</span></div>
+            <div class="tags"><span class="tag">ZeyOS ERP/WMS</span><span class="tag"><span data-l="en">Goods receipt</span><span data-l="de" lang="de">Wareneingang</span></span><span class="tag"><span data-l="en">Cycle counts</span><span data-l="de" lang="de">Inventur</span></span><span class="tag"><span data-l="en">Team lead</span><span data-l="de" lang="de">Teamführung</span></span></div>
           </div>
         </article>
 
@@ -191,16 +196,14 @@
           <span class="node" aria-hidden="true"></span>
           <div class="cp-card">
             <div class="cp-top">
-              <h3>Fulfillment &amp; Sortation Associate</h3>
-              <span class="cp-when">Aug–Dec 2019 · Oct 2020 – Jun 2021</span>
+              <h3><span data-l="en">Fulfillment &amp; Sortation Associate</span><span data-l="de" lang="de">Fulfillment &amp; Sortation Associate</span></h3>
+              <span class="cp-when"><span data-l="en">Aug–Dec 2019 · Oct 2020 – Jun 2021</span><span data-l="de" lang="de">Aug.–Dez. 2019 · Okt. 2020 – Juni 2021</span></span>
             </div>
-            <p class="cp-org">Amazon — Rheinberg &amp; Krefeld, Germany</p>
+            <p class="cp-org"><span data-l="en">Amazon — Rheinberg &amp; Krefeld, Germany</span><span data-l="de" lang="de">Amazon — Rheinberg &amp; Krefeld, Deutschland</span></p>
             <ul>
-              <li>Supported high-volume inbound and outbound logistics, sortation and shipment processing.</li>
-              <li>Kept inventory accurate through goods receipt, barcode scanning and systematic storage in the WMS.</li>
-              <li>Checked product quality and order accuracy for on-time fulfilment.</li>
+              <li><span data-l="en">Supported high-volume inbound and outbound logistics, sortation and shipment processing.</span><span data-l="de" lang="de">Unterstützung hochvolumiger Ein- und Ausgangslogistik, Sortierung und Versandabwicklung.</span></li><li><span data-l="en">Kept inventory accurate through goods receipt, barcode scanning and systematic storage in the WMS.</span><span data-l="de" lang="de">Sicherstellung der Bestandsgenauigkeit durch Wareneingang, Barcode-Scanning und systematische Einlagerung im WMS.</span></li><li><span data-l="en">Checked product quality and order accuracy for on-time fulfilment.</span><span data-l="de" lang="de">Prüfung von Produktqualität und Auftragsgenauigkeit für eine termingerechte Abwicklung.</span></li>
             </ul>
-            <div class="tags"><span class="tag">Fulfilment</span><span class="tag">WMS</span><span class="tag">High volume</span></div>
+            <div class="tags"><span class="tag">Fulfilment</span><span class="tag">WMS</span><span class="tag"><span data-l="en">High volume</span><span data-l="de" lang="de">Hohe Volumina</span></span></div>
           </div>
         </article>
 
@@ -208,15 +211,14 @@
           <span class="node" aria-hidden="true"></span>
           <div class="cp-card">
             <div class="cp-top">
-              <h3>Chief Marketing Officer</h3>
-              <span class="cp-when">Feb 2018 – Sep 2018</span>
+              <h3><span data-l="en">Chief Marketing Officer</span><span data-l="de" lang="de">Chief Marketing Officer</span></h3>
+              <span class="cp-when"><span data-l="en">Feb 2018 – Sep 2018</span><span data-l="de" lang="de">Feb. 2018 – Sep. 2018</span></span>
             </div>
-            <p class="cp-org">Himalaya Dromel Pvt. Ltd. — Kathmandu, Nepal</p>
+            <p class="cp-org"><span data-l="en">Himalaya Dromel Pvt. Ltd. — Kathmandu, Nepal</span><span data-l="de" lang="de">Himalaya Dromel Pvt. Ltd. — Kathmandu, Nepal</span></p>
             <ul>
-              <li>Built and ran marketing strategy to grow awareness for an organic honey brand.</li>
-              <li>Did market and competitor research to find customer needs and new opportunities.</li>
+              <li><span data-l="en">Built and ran marketing strategy to grow awareness for an organic honey brand.</span><span data-l="de" lang="de">Entwicklung und Umsetzung der Marketingstrategie für eine Bio-Honigmarke.</span></li><li><span data-l="en">Did market and competitor research to find customer needs and new opportunities.</span><span data-l="de" lang="de">Markt- und Wettbewerbsanalysen zur Identifikation von Kundenbedürfnissen und neuen Chancen.</span></li>
             </ul>
-            <div class="tags"><span class="tag">Market research</span><span class="tag">Brand</span></div>
+            <div class="tags"><span class="tag"><span data-l="en">Market research</span><span data-l="de" lang="de">Marktforschung</span></span><span class="tag"><span data-l="en">Brand</span><span data-l="de" lang="de">Marke</span></span></div>
           </div>
         </article>
       </div>
@@ -227,79 +229,68 @@
   <section id="projects" aria-labelledby="projTitle" style="padding-top: 0;">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="num">03 / Projects</span>
-        <h2 id="projTitle">Reports that answer operational questions.</h2>
-        <p class="lead">My featured project is a full Power BI report — interact with the live version below, flip through the pages, or read how it was built step by step.</p>
+        <span class="num">03 / <span data-l="en">Projects</span><span data-l="de" lang="de">Projekte</span></span>
+        <h2 id="projTitle"><span data-l="en">Reports that answer operational questions.</span><span data-l="de" lang="de">Berichte, die operative Fragen beantworten.</span></h2>
+        <p class="lead"><span data-l="en">My featured project is a full Power BI report — interact with the live version below, flip through the pages, or read how it was built step by step.</span><span data-l="de" lang="de">Mein Hauptprojekt ist ein vollständiger Power-BI-Bericht — probieren Sie die Live-Version unten aus, blättern Sie durch die Seiten oder lesen Sie Schritt für Schritt, wie er entstanden ist.</span></p>
       </div>
 
       <article class="featured reveal" aria-labelledby="salesTitle">
         <div class="featured-head">
           <div>
-            <span class="eyebrow">Featured · Power BI</span>
+            <span class="eyebrow"><span data-l="en">Featured · Power BI</span><span data-l="de" lang="de">Hauptprojekt · Power BI</span></span>
             <h3 id="salesTitle">Sales Performance Dashboard</h3>
-            <p>A raw Excel pivot export of 15,118 FMCG sales rows (2011–2014), turned into a tested six-page report: cleaned in Power Query, modelled as a star, measured with 54 DAX measures — and with its own data-quality page, so every number can be trusted.</p>
+            <p><span data-l="en">A raw Excel pivot export of 15,118 FMCG sales rows (2011–2014), turned into a tested six-page report: cleaned in Power Query, modelled as a star, measured with 54 DAX measures — and with its own data-quality page, so every number can be trusted.</span><span data-l="de" lang="de">Ein roher Excel-Pivot-Export mit 15.118 FMCG-Verkaufszeilen (2011–2014), verwandelt in einen geprüften sechsseitigen Bericht: bereinigt in Power Query, als Sternschema modelliert, mit 54 DAX-Measures berechnet — und mit eigener Datenqualitätsseite, damit jede Zahl belastbar ist.</span></p>
           </div>
           <div class="kpis" aria-label="Headline results">
-            <div class="kpi"><b>€50.4M</b><span>revenue, 2011–2014</span></div>
-            <div class="kpi"><b>26.6%</b><span>gross margin, flat every year</span></div>
-            <div class="kpi"><b class="up">+5.3%</b><span>revenue CAGR</span></div>
-            <div class="kpi"><b>55%</b><span>from the top 10 of 124 producers</span></div>
-            <div class="kpi"><b class="down">−1.3%</b><span>revenue in 2014</span></div>
-            <div class="kpi"><b class="down">€242K</b><span>profit lost below cost</span></div>
+            <div class="kpi"><b><span data-l="en">€50.4M</span><span data-l="de" lang="de">50,4 Mio. €</span></b><span><span data-l="en">revenue, 2011–2014</span><span data-l="de" lang="de">Umsatz, 2011–2014</span></span></div>
+            <div class="kpi"><b><span data-l="en">26.6%</span><span data-l="de" lang="de">26,6 %</span></b><span><span data-l="en">gross margin, flat every year</span><span data-l="de" lang="de">Bruttomarge, jedes Jahr stabil</span></span></div>
+            <div class="kpi"><b class="up"><span data-l="en">+5.3%</span><span data-l="de" lang="de">+5,3 %</span></b><span><span data-l="en">revenue CAGR</span><span data-l="de" lang="de">Umsatz-CAGR</span></span></div>
+            <div class="kpi"><b><span data-l="en">55%</span><span data-l="de" lang="de">55 %</span></b><span><span data-l="en">from the top 10 of 124 producers</span><span data-l="de" lang="de">von den Top 10 der 124 Produzenten</span></span></div>
+            <div class="kpi"><b class="down"><span data-l="en">−1.3%</span><span data-l="de" lang="de">−1,3 %</span></b><span><span data-l="en">revenue in 2014</span><span data-l="de" lang="de">Umsatz 2014</span></span></div>
+            <div class="kpi"><b class="down"><span data-l="en">€242K</span><span data-l="de" lang="de">242 Tsd. €</span></b><span><span data-l="en">profit lost below cost</span><span data-l="de" lang="de">Gewinnverlust unter Einstandspreis</span></span></div>
           </div>
         </div>
 
         <div class="viewer">
           <div class="viewer-tabs" role="tablist" aria-label="Report view">
-            <button class="viewer-tab" role="tab" id="tab-live" aria-selected="true" aria-controls="panel-live">Live report</button>
-            <button class="viewer-tab" role="tab" id="tab-pages" aria-selected="false" aria-controls="panel-pages" tabindex="-1">All six pages</button>
+            <button class="viewer-tab" role="tab" id="tab-live" aria-selected="true" aria-controls="panel-live"><span data-l="en">Live report</span><span data-l="de" lang="de">Live-Bericht</span></button>
+            <button class="viewer-tab" role="tab" id="tab-pages" aria-selected="false" aria-controls="panel-pages" tabindex="-1"><span data-l="en">All six pages</span><span data-l="de" lang="de">Alle sechs Seiten</span></button>
           </div>
 
           <div class="viewer-panel" id="panel-live" role="tabpanel" aria-labelledby="tab-live">
             <div class="embed-frame" id="embedFrame">
               <div class="embed-placeholder" style="background-image:url('sales-overview.jpg')">
-                <button class="btn btn-primary" id="loadEmbed" type="button">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-                  Load the interactive report
-                </button>
+                <button class="btn btn-primary" id="loadEmbed" type="button"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span data-l="en">Load the interactive report</span><span data-l="de" lang="de">Interaktiven Bericht laden</span></button>
               </div>
             </div>
-            <p class="embed-note">Hosted on Microsoft Power BI (Publish to web). Use the page buttons inside the report, or open it <a href="https://app.powerbi.com/view?r=eyJrIjoiMGZmODIwZmUtZTc1Ni00MDdiLWE4OWMtOGU0OTI3YjRiNDEyIiwidCI6Ijc1NmI0YzhkLWIwNjktNDg3NS05NmJlLWZhNWEwNWE0N2I3YiIsImMiOjh9" target="_blank" rel="noopener">full screen in a new tab</a>.</p>
+            <p class="embed-note"><span data-l="en">Hosted on Microsoft Power BI (Publish to web). Use the page buttons inside the report, or open it <a href="https://app.powerbi.com/view?r=eyJrIjoiMGZmODIwZmUtZTc1Ni00MDdiLWE4OWMtOGU0OTI3YjRiNDEyIiwidCI6Ijc1NmI0YzhkLWIwNjktNDg3NS05NmJlLWZhNWEwNWE0N2I3YiIsImMiOjh9" target="_blank" rel="noopener">full screen in a new tab</a>.</span><span data-l="de" lang="de">Bereitgestellt über Microsoft Power BI (Im Web veröffentlichen). Nutzen Sie die Seitennavigation im Bericht oder öffnen Sie ihn <a href="https://app.powerbi.com/view?r=eyJrIjoiMGZmODIwZmUtZTc1Ni00MDdiLWE4OWMtOGU0OTI3YjRiNDEyIiwidCI6Ijc1NmI0YzhkLWIwNjktNDg3NS05NmJlLWZhNWEwNWE0N2I3YiIsImMiOjh9" target="_blank" rel="noopener">im Vollbild in einem neuen Tab</a>.</span></p>
           </div>
 
           <div class="viewer-panel" id="panel-pages" role="tabpanel" aria-labelledby="tab-pages" hidden>
             <div class="gallery" id="salesGallery">
-              <figure class="shot"><button type="button" data-full="sales-overview.jpg" data-caption="Overview — how are we doing?"><img src="sales-overview.jpg" alt="Overview page with KPI tiles, yearly trend, growth, channel share, product groups and top producers" loading="lazy"></button><figcaption><b>Overview</b><span>How are we doing?</span></figcaption></figure>
-              <figure class="shot"><button type="button" data-full="sales-channels.jpg" data-caption="Channels — where do we sell?"><img src="sales-channels.jpg" alt="Channels page with a channel scorecard and product mix per channel" loading="lazy"></button><figcaption><b>Channels</b><span>Where do we sell?</span></figcaption></figure>
-              <figure class="shot"><button type="button" data-full="sales-products.jpg" data-caption="Products — what sells and what grows?"><img src="sales-products.jpg" alt="Products page with a treemap, a size-versus-margin bubble chart and a year matrix" loading="lazy"></button><figcaption><b>Products</b><span>What sells and what grows?</span></figcaption></figure>
-              <figure class="shot"><button type="button" data-full="sales-producers.jpg" data-caption="Producers — who do we depend on?"><img src="sales-producers.jpg" alt="Producers page with a Pareto chart, a ranking table and margin versus average" loading="lazy"></button><figcaption><b>Producers</b><span>Who do we depend on?</span></figcaption></figure>
-              <figure class="shot"><button type="button" data-full="sales-profitability.jpg" data-caption="Profitability — where is margin lost?"><img src="sales-profitability.jpg" alt="Profitability page with price versus cost, margin versus average and losses by producer" loading="lazy"></button><figcaption><b>Profitability</b><span>Where is margin lost?</span></figcaption></figure>
-              <figure class="shot"><button type="button" data-full="sales-data-quality.jpg" data-caption="Data Quality — can we trust it?"><img src="sales-data-quality.jpg" alt="Data Quality page with check results, audit notes and tables of problem rows" loading="lazy"></button><figcaption><b>Data Quality</b><span>Can we trust it?</span></figcaption></figure>
+              <figure class="shot"><button type="button" data-full="sales-overview.jpg" data-caption="Overview — how are we doing?" data-caption-de="Übersicht — wie stehen wir da?"><img src="sales-overview.jpg" alt="Overview page with KPI tiles, yearly trend, growth, channel share, product groups and top producers" data-alt-de="Übersichtsseite mit KPI-Kacheln, Jahrestrend, Wachstum, Kanalanteilen, Produktgruppen und Top-Produzenten" loading="lazy"></button><figcaption><b><span data-l="en">Overview</span><span data-l="de" lang="de">Übersicht</span></b><span><span data-l="en">How are we doing?</span><span data-l="de" lang="de">Wie stehen wir da?</span></span></figcaption></figure><figure class="shot"><button type="button" data-full="sales-channels.jpg" data-caption="Channels — where do we sell?" data-caption-de="Kanäle — wo verkaufen wir?"><img src="sales-channels.jpg" alt="Channels page with a channel scorecard and product mix per channel" data-alt-de="Kanalseite mit Scorecard je Vertriebskanal und Produktmix pro Kanal" loading="lazy"></button><figcaption><b><span data-l="en">Channels</span><span data-l="de" lang="de">Kanäle</span></b><span><span data-l="en">Where do we sell?</span><span data-l="de" lang="de">Wo verkaufen wir?</span></span></figcaption></figure><figure class="shot"><button type="button" data-full="sales-products.jpg" data-caption="Products — what sells and what grows?" data-caption-de="Produkte — was verkauft sich, was wächst?"><img src="sales-products.jpg" alt="Products page with a treemap, a size-versus-margin bubble chart and a year matrix" data-alt-de="Produktseite mit Treemap, Blasendiagramm Größe vs. Marge und Jahresmatrix" loading="lazy"></button><figcaption><b><span data-l="en">Products</span><span data-l="de" lang="de">Produkte</span></b><span><span data-l="en">What sells and what grows?</span><span data-l="de" lang="de">Was verkauft sich, was wächst?</span></span></figcaption></figure><figure class="shot"><button type="button" data-full="sales-producers.jpg" data-caption="Producers — who do we depend on?" data-caption-de="Produzenten — von wem hängen wir ab?"><img src="sales-producers.jpg" alt="Producers page with a Pareto chart, a ranking table and margin versus average" data-alt-de="Produzentenseite mit Pareto-Diagramm, Rangliste und Marge im Vergleich zum Durchschnitt" loading="lazy"></button><figcaption><b><span data-l="en">Producers</span><span data-l="de" lang="de">Produzenten</span></b><span><span data-l="en">Who do we depend on?</span><span data-l="de" lang="de">Von wem hängen wir ab?</span></span></figcaption></figure><figure class="shot"><button type="button" data-full="sales-profitability.jpg" data-caption="Profitability — where is margin lost?" data-caption-de="Profitabilität — wo geht Marge verloren?"><img src="sales-profitability.jpg" alt="Profitability page with price versus cost, margin versus average and losses by producer" data-alt-de="Profitabilitätsseite mit Preis vs. Kosten, Marge vs. Durchschnitt und Verlusten je Produzent" loading="lazy"></button><figcaption><b><span data-l="en">Profitability</span><span data-l="de" lang="de">Profitabilität</span></b><span><span data-l="en">Where is margin lost?</span><span data-l="de" lang="de">Wo geht Marge verloren?</span></span></figcaption></figure><figure class="shot"><button type="button" data-full="sales-data-quality.jpg" data-caption="Data Quality — can we trust it?" data-caption-de="Datenqualität — können wir den Zahlen trauen?"><img src="sales-data-quality.jpg" alt="Data Quality page with check results, audit notes and tables of problem rows" data-alt-de="Datenqualitätsseite mit Prüfergebnissen, Prüfhinweisen und Tabellen der Problemzeilen" loading="lazy"></button><figcaption><b><span data-l="en">Data Quality</span><span data-l="de" lang="de">Datenqualität</span></b><span><span data-l="en">Can we trust it?</span><span data-l="de" lang="de">Können wir den Zahlen trauen?</span></span></figcaption></figure>
             </div>
           </div>
         </div>
 
         <div class="featured-foot">
-          <div class="tags"><span class="tag">Power BI</span><span class="tag">Power Query</span><span class="tag">DAX · 54 measures</span><span class="tag">Data modelling</span><span class="tag">Data validation</span></div>
-          <a class="btn btn-ghost" href="sales-dashboard.html">
-            How it was built
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
+          <div class="tags"><span class="tag">Power BI</span><span class="tag">Power Query</span><span class="tag"><span data-l="en">DAX · 54 measures</span><span data-l="de" lang="de">DAX · 54 Measures</span></span><span class="tag"><span data-l="en">Data modelling</span><span data-l="de" lang="de">Datenmodellierung</span></span><span class="tag"><span data-l="en">Data validation</span><span data-l="de" lang="de">Datenvalidierung</span></span></div>
+          <a class="btn btn-ghost" href="sales-dashboard.html"><span data-l="en">How it was built</span><span data-l="de" lang="de">So ist er entstanden</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </article>
 
       <div class="project-grid">
         <article class="project reveal">
-          <span class="kind">Excel · Financial analysis</span>
-          <h3>Saldi Case Study — Financial Accounting</h3>
-          <p>Built the FY2015 profit &amp; loss statement and balance sheet from raw transaction data, reconciled the accounts, and analysed profitability, liquidity and leverage KPIs across FY2013–FY2015.</p>
-          <div class="tags"><span class="tag">Excel</span><span class="tag">P&amp;L</span><span class="tag">Balance sheet</span><span class="tag">KPI analysis</span></div>
+          <span class="kind"><span data-l="en">Excel · Financial analysis</span><span data-l="de" lang="de">Excel · Finanzanalyse</span></span>
+          <h3><span data-l="en">Saldi Case Study — Financial Accounting</span><span data-l="de" lang="de">Saldi-Fallstudie — Finanzbuchhaltung</span></h3>
+          <p><span data-l="en">Built the FY2015 profit &amp; loss statement and balance sheet from raw transaction data, reconciled the accounts, and analysed profitability, liquidity and leverage KPIs across FY2013–FY2015.</span><span data-l="de" lang="de">Aufbau von GuV und Bilanz für das Geschäftsjahr 2015 aus Rohdaten der Buchungen, Abstimmung der Konten sowie Analyse von Rentabilitäts-, Liquiditäts- und Verschuldungskennzahlen für 2013–2015.</span></p>
+          <div class="tags"><span class="tag">Excel</span><span class="tag"><span data-l="en">P&amp;L</span><span data-l="de" lang="de">GuV</span></span><span class="tag"><span data-l="en">Balance sheet</span><span data-l="de" lang="de">Bilanz</span></span><span class="tag"><span data-l="en">KPI analysis</span><span data-l="de" lang="de">KPI-Analyse</span></span></div>
         </article>
         <article class="project reveal">
-          <span class="kind">Excel · Forecasting</span>
-          <h3>Tesla Vehicle Deliveries Forecast</h3>
-          <p>An Excel forecasting model that projects Tesla deliveries through 2029, combining historical trends with model-by-model growth assumptions — the same logic used in demand planning.</p>
-          <div class="tags"><span class="tag">Excel</span><span class="tag">Forecasting</span><span class="tag">Scenario assumptions</span></div>
+          <span class="kind"><span data-l="en">Excel · Forecasting</span><span data-l="de" lang="de">Excel · Prognose</span></span>
+          <h3><span data-l="en">Tesla Vehicle Deliveries Forecast</span><span data-l="de" lang="de">Prognose der Tesla-Auslieferungen</span></h3>
+          <p><span data-l="en">An Excel forecasting model that projects Tesla deliveries through 2029, combining historical trends with model-by-model growth assumptions — the same logic used in demand planning.</span><span data-l="de" lang="de">Ein Excel-Prognosemodell, das die Tesla-Auslieferungen bis 2029 hochrechnet — aus historischen Trends und Wachstumsannahmen je Modell, nach derselben Logik wie in der Bedarfsplanung.</span></p>
+          <div class="tags"><span class="tag">Excel</span><span class="tag"><span data-l="en">Forecasting</span><span data-l="de" lang="de">Prognose</span></span><span class="tag"><span data-l="en">Scenario assumptions</span><span data-l="de" lang="de">Szenarioannahmen</span></span></div>
         </article>
       </div>
     </div>
@@ -309,35 +300,40 @@
   <section id="skills" aria-labelledby="skillsTitle" style="padding-top: 0;">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="num">04 / Cargo manifest</span>
-        <h2 id="skillsTitle">What I bring on board.</h2>
-        <p class="lead">Highlighted items are the ones I use every day.</p>
+        <span class="num">04 / <span data-l="en">Cargo manifest</span><span data-l="de" lang="de">Ladeliste</span></span>
+        <h2 id="skillsTitle"><span data-l="en">What I bring on board.</span><span data-l="de" lang="de">Was ich mit an Bord bringe.</span></h2>
+        <p class="lead"><span data-l="en">Highlighted items are the ones I use every day.</span><span data-l="de" lang="de">Hervorgehoben ist, was ich täglich nutze.</span></p>
       </div>
       <div class="skill-table reveal">
+
         <div class="skill-row">
           <span class="code">SC-01</span>
-          <h3>Supply chain &amp; logistics<small>Moving goods end to end</small></h3>
-          <div class="chips"><span class="chip hi">Supplier coordination</span><span class="chip hi">International shipping</span><span class="chip hi">Shipping &amp; trade documents</span><span class="chip">Carrier management</span><span class="chip">B2B order fulfilment</span><span class="chip">Delivery tracking</span></div>
+          <h3><span data-l="en">Supply chain &amp; logistics</span><span data-l="de" lang="de">Supply Chain &amp; Logistik</span><small><span data-l="en">Moving goods end to end</span><span data-l="de" lang="de">Waren von A bis Z bewegen</span></small></h3>
+          <div class="chips"><span class="chip hi"><span data-l="en">Supplier coordination</span><span data-l="de" lang="de">Lieferantenkoordination</span></span><span class="chip hi"><span data-l="en">International shipping</span><span data-l="de" lang="de">Internationaler Versand</span></span><span class="chip hi"><span data-l="en">Shipping &amp; trade documents</span><span data-l="de" lang="de">Versand- &amp; Handelsdokumente</span></span><span class="chip"><span data-l="en">Carrier management</span><span data-l="de" lang="de">Spediteurssteuerung</span></span><span class="chip"><span data-l="en">B2B order fulfilment</span><span data-l="de" lang="de">B2B-Auftragsabwicklung</span></span><span class="chip"><span data-l="en">Delivery tracking</span><span data-l="de" lang="de">Sendungsverfolgung</span></span></div>
         </div>
+
         <div class="skill-row">
           <span class="code">WH-02</span>
-          <h3>Inventory &amp; warehouse<small>Keeping stock data true</small></h3>
-          <div class="chips"><span class="chip hi">Goods receipt</span><span class="chip hi">Cycle counts &amp; stocktaking</span><span class="chip">Discrepancy resolution</span><span class="chip">Replenishment</span><span class="chip">Outbound shipping</span><span class="chip">Team onboarding &amp; training</span></div>
+          <h3><span data-l="en">Inventory &amp; warehouse</span><span data-l="de" lang="de">Bestand &amp; Lager</span><small><span data-l="en">Keeping stock data true</span><span data-l="de" lang="de">Bestandsdaten, die stimmen</span></small></h3>
+          <div class="chips"><span class="chip hi"><span data-l="en">Goods receipt</span><span data-l="de" lang="de">Wareneingang</span></span><span class="chip hi"><span data-l="en">Cycle counts &amp; stocktaking</span><span data-l="de" lang="de">Zykluszählung &amp; Inventur</span></span><span class="chip"><span data-l="en">Discrepancy resolution</span><span data-l="de" lang="de">Klärung von Differenzen</span></span><span class="chip"><span data-l="en">Replenishment</span><span data-l="de" lang="de">Nachschub</span></span><span class="chip"><span data-l="en">Outbound shipping</span><span data-l="de" lang="de">Warenausgang</span></span><span class="chip"><span data-l="en">Team onboarding &amp; training</span><span data-l="de" lang="de">Einarbeitung &amp; Schulung</span></span></div>
         </div>
+
         <div class="skill-row">
           <span class="code">SY-03</span>
-          <h3>Systems<small>ERP, WMS and SAP</small></h3>
-          <div class="chips"><span class="chip hi">ZeyOS ERP/WMS</span><span class="chip">SAP S/4HANA Sourcing &amp; Procurement</span><span class="chip">SAP MM</span><span class="chip">SAP Ariba</span><span class="chip">DHL Business Customer Portal</span><span class="chip">BITFLOW</span><span class="chip">Codematic</span></div>
+          <h3><span data-l="en">Systems</span><span data-l="de" lang="de">Systeme</span><small><span data-l="en">ERP, WMS and SAP</span><span data-l="de" lang="de">ERP, WMS und SAP</span></small></h3>
+          <div class="chips"><span class="chip hi">ZeyOS ERP/WMS</span><span class="chip">SAP S/4HANA Sourcing &amp; Procurement</span><span class="chip">SAP MM</span><span class="chip">SAP Ariba</span><span class="chip"><span data-l="en">DHL Business Customer Portal</span><span data-l="de" lang="de">DHL-Geschäftskundenportal</span></span><span class="chip">BITFLOW</span><span class="chip">Codematic</span></div>
         </div>
+
         <div class="skill-row">
           <span class="code">DA-04</span>
-          <h3>Data &amp; analysis<small>Turning records into decisions</small></h3>
-          <div class="chips"><span class="chip hi">Power BI</span><span class="chip hi">Excel</span><span class="chip">DAX</span><span class="chip">Power Query</span><span class="chip">Data modelling</span><span class="chip">Forecasting</span><span class="chip">SPSS</span></div>
+          <h3><span data-l="en">Data &amp; analysis</span><span data-l="de" lang="de">Daten &amp; Analyse</span><small><span data-l="en">Turning records into decisions</span><span data-l="de" lang="de">Aus Daten Entscheidungen machen</span></small></h3>
+          <div class="chips"><span class="chip hi">Power BI</span><span class="chip hi">Excel</span><span class="chip">DAX</span><span class="chip">Power Query</span><span class="chip"><span data-l="en">Data modelling</span><span data-l="de" lang="de">Datenmodellierung</span></span><span class="chip"><span data-l="en">Forecasting</span><span data-l="de" lang="de">Prognosen</span></span><span class="chip">SPSS</span></div>
         </div>
+
         <div class="skill-row">
           <span class="code">WK-05</span>
-          <h3>Ways of working<small>How I get things done</small></h3>
-          <div class="chips"><span class="chip">Process improvement</span><span class="chip">Agile &amp; Scrum basics</span><span class="chip">Stakeholder coordination</span><span class="chip">Working across cultures</span><span class="chip">Google Workspace</span><span class="chip">HubSpot</span></div>
+          <h3><span data-l="en">Ways of working</span><span data-l="de" lang="de">Arbeitsweise</span><small><span data-l="en">How I get things done</span><span data-l="de" lang="de">Wie ich arbeite</span></small></h3>
+          <div class="chips"><span class="chip"><span data-l="en">Process improvement</span><span data-l="de" lang="de">Prozessverbesserung</span></span><span class="chip"><span data-l="en">Agile &amp; Scrum basics</span><span data-l="de" lang="de">Agile- &amp; Scrum-Grundlagen</span></span><span class="chip"><span data-l="en">Stakeholder coordination</span><span data-l="de" lang="de">Stakeholder-Abstimmung</span></span><span class="chip"><span data-l="en">Working across cultures</span><span data-l="de" lang="de">Interkulturelle Zusammenarbeit</span></span><span class="chip">Google Workspace</span><span class="chip">HubSpot</span></div>
         </div>
       </div>
     </div>
@@ -347,34 +343,34 @@
   <section id="education" aria-labelledby="eduTitle" style="padding-top: 0;">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="num">05 / Education &amp; certifications</span>
-        <h2 id="eduTitle">Certified to handle it.</h2>
+        <span class="num">05 / <span data-l="en">Education &amp; certifications</span><span data-l="de" lang="de">Ausbildung &amp; Zertifikate</span></span>
+        <h2 id="eduTitle"><span data-l="en">Certified to handle it.</span><span data-l="de" lang="de">Zertifiziert für die Aufgabe.</span></h2>
       </div>
       <div class="two-col">
         <div class="reveal">
-          <h3 class="sub-h">Degrees</h3>
+          <h3 class="sub-h"><span data-l="en">Degrees</span><span data-l="de" lang="de">Abschlüsse</span></h3>
           <div class="edu">
             <div class="edu-card">
-              <span class="cp-when">2023 – expected 03/2027</span>
+              <span class="cp-when"><span data-l="en">2023 – expected 03/2027</span><span data-l="de" lang="de">2023 – voraussichtlich 03/2027</span></span>
               <h3>M.Sc. International Management &amp; Psychology</h3>
-              <p>Rhine-Waal University (Hochschule Rhein-Waal) — Kamp-Lintfort. All coursework completed; Master's thesis in progress.</p>
+              <p><span data-l="en">Rhine-Waal University (Hochschule Rhein-Waal) — Kamp-Lintfort. All coursework completed; Master's thesis in progress.</span><span data-l="de" lang="de">Hochschule Rhein-Waal — Kamp-Lintfort. Alle Studienleistungen abgeschlossen; Masterarbeit in Bearbeitung.</span></p>
             </div>
             <div class="edu-card">
               <span class="cp-when">2013 – 2018</span>
-              <h3>Bachelor of Business Administration — Management &amp; Finance</h3>
-              <p>Pokhara University, Nepal. Dean's List; three-month internship at NMB Bank Limited.</p>
-              <div class="grade"><b>1.2</b> German scale · GPA 3.84 / 4.00</div>
+              <h3><span data-l="en">Bachelor of Business Administration — Management &amp; Finance</span><span data-l="de" lang="de">Bachelor of Business Administration — Management &amp; Finanzen</span></h3>
+              <p><span data-l="en">Pokhara University, Nepal. Dean's List; three-month internship at NMB Bank Limited.</span><span data-l="de" lang="de">Pokhara University, Nepal. Dean's List; dreimonatiges Praktikum bei der NMB Bank Limited.</span></p>
+              <div class="grade"><b><span data-l="en">1.2</span><span data-l="de" lang="de">1,2</span></b> <span data-l="en">German scale · GPA 3.84 / 4.00</span><span data-l="de" lang="de">deutsche Notenskala · GPA 3,84 / 4,00</span></div>
             </div>
           </div>
-          <h3 class="sub-h" style="margin-top: 32px;">Languages</h3>
+          <h3 class="sub-h" style="margin-top: 32px;"><span data-l="en">Languages</span><span data-l="de" lang="de">Sprachen</span></h3>
           <div class="lang-bars">
-            <div class="lang"><span>English</span><span class="bar"><i style="width:90%"></i></span><span class="lvl">C1</span></div>
-            <div class="lang"><span>German</span><span class="bar"><i style="width:70%"></i></span><span class="lvl">B2</span></div>
-            <div class="lang"><span>Nepali</span><span class="bar"><i style="width:100%"></i></span><span class="lvl">Native</span></div>
+            <div class="lang"><span><span data-l="en">English</span><span data-l="de" lang="de">Englisch</span></span><span class="bar"><i style="width:90%"></i></span><span class="lvl">C1</span></div>
+            <div class="lang"><span><span data-l="en">German</span><span data-l="de" lang="de">Deutsch</span></span><span class="bar"><i style="width:70%"></i></span><span class="lvl">B2</span></div>
+            <div class="lang"><span><span data-l="en">Nepali</span><span data-l="de" lang="de">Nepali</span></span><span class="bar"><i style="width:100%"></i></span><span class="lvl"><span data-l="en">Native</span><span data-l="de" lang="de">Mutterspr.</span></span></div>
           </div>
         </div>
         <div class="reveal">
-          <h3 class="sub-h">Certifications</h3>
+          <h3 class="sub-h"><span data-l="en">Certifications</span><span data-l="de" lang="de">Zertifikate</span></h3>
           <ul class="cert-list">
             <li><span class="issuer">SAP</span><span>Business Processes in SAP S/4HANA Sourcing &amp; Procurement</span></li>
             <li><span class="issuer">SAP</span><span>SAP MM — Materials Management</span></li>
@@ -384,7 +380,7 @@
             <li><span class="issuer">CSCMP</span><span>Supply Chain Foundations — Procurement Professional Certificate</span></li>
             <li><span class="issuer">BI</span><span>Power BI Desktop · Power BI Data Modeling with DAX</span></li>
             <li><span class="issuer">AGILE</span><span>Agile Business Analysis · Agile Foundations · Scrum: The Basics</span></li>
-            <li><span class="issuer">MORE</span><span>HubSpot Digital Marketing · Financial Analyst Certificate</span></li>
+            <li><span class="issuer"><span data-l="en">MORE</span><span data-l="de" lang="de">WEITERE</span></span><span>HubSpot Digital Marketing · Financial Analyst Certificate</span></li>
           </ul>
         </div>
       </div>
@@ -395,9 +391,9 @@
   <section id="contact" aria-labelledby="contactTitle" style="padding-top: 0;">
     <div class="wrap">
       <div class="contact reveal">
-        <span class="eyebrow">06 / Final destination</span>
-        <h2 id="contactTitle">Ready to ship. Let's talk.</h2>
-        <p>I'm looking for full-time roles in supply chain, logistics, inventory or operations in NRW or remote across Germany. The fastest route is email.</p>
+        <span class="eyebrow">06 / <span data-l="en">Final destination</span><span data-l="de" lang="de">Zielort</span></span>
+        <h2 id="contactTitle"><span data-l="en">Ready to ship. Let's talk.</span><span data-l="de" lang="de">Versandbereit. Lassen Sie uns sprechen.</span></h2>
+        <p><span data-l="en">I'm looking for full-time roles in supply chain, logistics, inventory or operations in NRW or remote across Germany. The fastest route is email.</span><span data-l="de" lang="de">Ich suche eine Vollzeitstelle in Supply Chain, Logistik, Bestandsmanagement oder Operations — in NRW oder remote in ganz Deutschland. Der schnellste Weg ist eine E-Mail.</span></p>
         <div class="contact-links">
           <a class="btn btn-primary" href="mailto:Rishikharel1995@gmail.com">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
@@ -411,7 +407,7 @@
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .8.1-.7.4-1.1.6-1.4-2.2-.2-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.8-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></svg>
             GitHub
           </a>
-          <a class="btn btn-ghost" href="Rishiram_Kharel_CV.pdf" download>Download CV (PDF)</a>
+          <a class="btn btn-ghost" data-l="en" href="Rishiram_Kharel_CV.pdf" download>Download CV (PDF)</a><a class="btn btn-ghost" data-l="de" href="Rishiram_Kharel_Lebenslauf.pdf" download>Lebenslauf herunterladen (PDF)</a>
         </div>
       </div>
     </div>
@@ -421,7 +417,7 @@
 <footer class="site-footer">
   <div class="wrap">
     <span>© <span id="year">2026</span> Rishiram Kharel · Mülheim an der Ruhr</span>
-    <span class="mono">Built with plain HTML, CSS &amp; JS · <a href="#top">Back to top ↑</a></span>
+    <span class="mono"><span data-l="en">Built with plain HTML, CSS &amp; JS</span><span data-l="de" lang="de">Gebaut mit HTML, CSS &amp; JS</span> · <a href="#top"><span data-l="en">Back to top ↑</span><span data-l="de" lang="de">Nach oben ↑</span></a></span>
   </div>
 </footer>
 

@@ -9,7 +9,9 @@ Personal portfolio website: supply chain & logistics operations, with data analy
 - `index.html` — home page: profile, career route, experience, projects, skills, education, contact
 - `sales-dashboard.html` — case study: how the Sales Performance Dashboard (Power BI) was built
 - `style.css`, `main.js` — styles and small interactions (no framework, no build step)
-- `sales-*.jpg` — report page screenshots · `Rishiram_Kharel_CV.pdf` · `favicon.svg`
+- `sales-*.jpg` — report page screenshots · `Rishiram_Kharel_CV.pdf` (EN) · `Rishiram_Kharel_Lebenslauf.pdf` (DE) · `favicon.svg`
+
+The site is bilingual (English / Deutsch) and has a light and a dark theme. Both switches sit in the header; the choice is remembered, and first-time visitors get their browser's language and system theme. Links can force a language with `?lang=de` or `?lang=en`.
 
 The featured Power BI report is embedded live from Power BI "Publish to web"; it loads on click to keep the page fast.
 
