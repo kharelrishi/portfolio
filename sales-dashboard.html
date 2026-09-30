@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sales Performance Dashboard — Rishiram Kharel</title>
+  <meta name="description" content="How a raw Excel pivot export of 15,118 FMCG sales rows became a tested, six-page Power BI report with 54 DAX measures.">
+  <meta property="og:title" content="Sales Performance Dashboard — how it was built">
+  <meta property="og:image" content="sales-overview.jpg">
+  <meta name="theme-color" content="#0b1524">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="index.html">
+      <img src="favicon.svg" alt="" width="34" height="34">
+      <span>Rishiram Kharel<small>SUPPLY CHAIN · LOGISTICS · DATA</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <ul class="nav-links" id="navLinks" data-open="false">
+      <li><a href="#route">The route</a></li>
+      <li><a href="#pages">Report pages</a></li>
+      <li><a href="#findings">Findings</a></li>
+      <li><a href="index.html#projects">All projects</a></li>
+      <li><a class="nav-cta" href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="cs-hero">
+    <div class="wrap">
+      <a class="crumb" href="index.html#projects">← Back to projects</a>
+      <p class="eyebrow" style="margin-top: 26px;">Power BI · Project walkthrough</p>
+      <h1>How the Sales Performance Dashboard was built</h1>
+      <p class="lead">From a raw Excel pivot export to a tested, six-page Power BI report — covering FMCG sales from 2011 to 2014. Every number on every page is traceable to a checked row.</p>
+      <div class="cs-meta">
+        <span class="tag">Power BI Desktop</span><span class="tag">Power Query</span><span class="tag">DAX</span><span class="tag">Power BI project files (PBIP)</span><span class="tag">Python</span>
+      </div>
+
+      <div class="embed-frame cs-cover" id="embedFrame">
+        <div class="embed-placeholder" style="background-image:url('sales-overview.jpg')">
+          <button class="btn btn-primary" id="loadEmbed" type="button">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            Load the interactive report
+          </button>
+        </div>
+      </div>
+      <p class="embed-note">Live report hosted on Microsoft Power BI. <a href="https://app.powerbi.com/view?r=eyJrIjoiMGZmODIwZmUtZTc1Ni00MDdiLWE4OWMtOGU0OTI3YjRiNDEyIiwidCI6Ijc1NmI0YzhkLWIwNjktNDg3NS05NmJlLWZhNWEwNWE0N2I3YiIsImMiOjh9" target="_blank" rel="noopener">Open it full screen ↗</a></p>
+    </div>
+  </section>
+
+  <!-- Route -->
+  <section class="cs-section" id="route" aria-labelledby="routeTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num">The route</span>
+        <h2 id="routeTitle">Six steps from spreadsheet to report</h2>
+      </div>
+      <div class="steps">
+        <a class="step" href="#source"><span class="n">01</span><b>Source</b><span>Read the Excel pivot export and learn its quirks</span></a>
+        <a class="step" href="#prepare"><span class="n">02</span><b>Prepare</b><span>Clean, rename and type the columns in Power Query</span></a>
+        <a class="step" href="#validate"><span class="n">03</span><b>Validate</b><span>Test every row before trusting a total</span></a>
+        <a class="step" href="#model"><span class="n">04</span><b>Model</b><span>Link the sales table to a year table</span></a>
+        <a class="step" href="#measure"><span class="n">05</span><b>Measure</b><span>54 DAX measures for every number shown</span></a>
+        <a class="step" href="#design"><span class="n">06</span><b>Design</b><span>Six themed pages with shared filters</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1 Source -->
+  <section class="cs-section" id="source" aria-labelledby="s1">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num">Step 1 · Source</span>
+        <h2 id="s1">One Excel sheet, and three problems</h2>
+      </div>
+      <div class="cs-body">
+        <div>
+          <div class="checks" style="grid-template-columns: repeat(2, 1fr);">
+            <div class="check"><b>15,118</b><span>Sales rows</span><small>9 columns, from Year to Revenue</small></div>
+            <div class="check"><b>2011–14</b><span>Four years</span><small>of transaction data</small></div>
+            <div class="check"><b>124</b><span>Producers</span><small>selling into 3 channels</small></div>
+            <div class="check"><b>15</b><span>Product groups</span><small>from Coffee to Cosmetics</small></div>
+          </div>
+        </div>
+        <div>
+          <h3 class="sub-h">What needed fixing</h3>
+          <ul class="issues">
+            <li><b>Two rows before the data</b><span>A title row and a header row sat above the first sale.</span></li>
+            <li><b>Every column read as text</b><span>Numbers couldn't be summed until they were typed.</span></li>
+            <li><b>One broken cell</b><span>A stray character in Volume turned that row's Revenue into an Excel error.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 Prepare -->
+  <section class="cs-section" id="prepare" aria-labelledby="s2">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num">Step 2 · Prepare</span>
+        <h2 id="s2">Seven Power Query steps turn the sheet into a table</h2>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th class="num">#</th><th>Step</th><th>What it does</th></tr></thead>
+          <tbody>
+            <tr><td class="num">1</td><td>Source &amp; navigation</td><td>Opens Sheet1 of the workbook</td></tr>
+            <tr><td class="num">2</td><td>Skipped rows</td><td>Drops the title row and the header row</td></tr>
+            <tr><td class="num">3</td><td>Renamed columns</td><td>Column1–9 become Year, Channel … Revenue</td></tr>
+            <tr><td class="num">4</td><td>Valid rows</td><td>Keeps only rows whose Year is a real number</td></tr>
+            <tr><td class="num">5</td><td>Cleared source errors</td><td>Turns Excel error cells into blanks</td></tr>
+            <tr><td class="num">6</td><td>Typed</td><td>Whole-number Year, text labels, decimal amounts</td></tr>
+            <tr><td class="num">7</td><td>No errors</td><td>A final safety net so a refresh never fails</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="embed-note">Result: 15,118 rows load with zero refresh errors.</p>
+    </div>
+  </section>
+
+  <!-- 3 Validate -->
+  <section class="cs-section" id="validate" aria-labelledby="s3">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num">Step 3 · Validate</span>
+        <h2 id="s3">Every row was tested before any chart was built</h2>
+        <p class="lead">The checks run as DAX queries against the loaded model — and they became a page of the report.</p>
+      </div>
+      <div class="checks">
+        <div class="check ok"><b>0</b><span>Duplicate rows</span><small>Every sale appears exactly once</small></div>
+        <div class="check ok"><b>0</b><span>Revenue mismatches</span><small>Revenue = Volume × Price on every row</small></div>
+        <div class="check warn"><b>1</b><span>Row with missing values</span><small>The broken Volume cell — kept and flagged</small></div>
+        <div class="check bad"><b>322</b><span>Rows sold below cost</span><small>2.1% of rows, about €242K of lost profit</small></div>
+      </div>
+      <p class="embed-note" style="max-width: 70ch;">Worth knowing when comparing channels: they sell different ranges. Hypermarkets only sell Cheese, Bread and Sauces; Supermarkets mostly Vegetables.</p>
+    </div>
+  </section>
+
+  <!-- 4 Model -->
+  <section class="cs-section" id="model" aria-labelledby="s4">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num">Step 4 · Model</span>
+        <h2 id="s4">A small model: one fact table, one year table</h2>
+      </div>
+      <div class="model">
+        <div class="entity">
+          <h3>Sales <small>15,118 rows · fact</small></h3>
+          <ul>
+            <li class="key">Year 🔑</li>
+            <li>Channel · Product Group</li>
+            <li>Producer · Code</li>
+            <li>Volume · Cost per Unit</li>
+            <li>Price per Unit · Revenue</li>
+            <li style="color: var(--teal);">+ 54 measures</li>
+          </ul>
+        </div>
+        <div class="rel"><span>many-to-one</span><div class="line"></div><span>single direction</span></div>
+        <div class="entity">
+          <h3>Date <small>4 rows · 2011–2014</small></h3>
+          <ul>
+            <li class="key">Year 🔑</li>
+            <li>Calculated table in DAX</li>
+            <li>built with GENERATESERIES</li>
+            <li>Drives the Year filter</li>
+            <li>and every year-on-year measure</li>
+          </ul>
+        </div>
+      </div>
+      <p class="embed-note">Sales[Year] is hidden, so every page filters years through the Date table.</p>
+    </div>
+  </section>
+
+  <!-- 5 Measure -->
+  <section class="cs-section" id="measure" aria-labelledby="s5">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num">Step 5 · Measure</span>
+        <h2 id="s5">54 DAX measures, sorted into folders</h2>
+        <p class="lead">Averages are weighted by volume, so a large sale counts more than a small one. Numbered folders keep the field list in reading order.</p>
+      </div>
+      <div class="cs-body" style="grid-template-columns: 1.15fr 1fr;">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Folder</th><th class="num">Count</th><th>Examples</th></tr></thead>
+            <tbody>
+              <tr><td>Core</td><td class="num">4</td><td>Total Revenue, Total Volume, Total Cost, # Transactions</td></tr>
+              <tr><td>Profitability</td><td class="num">6</td><td>Gross Profit, Gross Margin %, Loss Amount, Margin vs Avg (pp)</td></tr>
+              <tr><td>Unit economics</td><td class="num">5</td><td>Avg Price per Unit, Avg Unit Cost, Unit Margin</td></tr>
+              <tr><td>Time intelligence</td><td class="num">8</td><td>Revenue PY, Revenue YoY %, Revenue CAGR %</td></tr>
+              <tr><td>Mix &amp; share</td><td class="num">12</td><td>Revenue Share %, Producer Rank, Top 10 Producer Share %</td></tr>
+              <tr><td>Labels &amp; colours</td><td class="num">15</td><td>Revenue Trend Label, YoY Color, Selection Label</td></tr>
+              <tr><td>Data quality</td><td class="num">4</td><td>Duplicate Rows, Revenue Check Mismatches, Data Completeness %</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h3 class="sub-h">KPI tiles that adapt to the filters</h3>
+<pre class="code"><span class="f">Revenue Trend Label</span> =
+<span class="k">VAR</span> yoy  = [Revenue YoY %]
+<span class="k">VAR</span> cagr = [Revenue CAGR %]
+<span class="k">RETURN</span>
+<span class="f">SWITCH</span>( <span class="f">TRUE</span>(),
+  <span class="k">NOT</span> <span class="f">ISBLANK</span>( yoy ),
+    <span class="f">FORMAT</span>( yoy, <span class="s">"▲ +0.0%;▼ -0.0%"</span> ) &amp; <span class="s">" vs "</span> &amp; ( year - 1 ),
+  <span class="k">NOT</span> <span class="f">ISBLANK</span>( cagr ),
+    <span class="f">FORMAT</span>( cagr, … ) &amp; <span class="s">" CAGR …"</span>,
+  <span class="s">"First year in range"</span>
+)</pre>
+          <p class="embed-note">All years selected → <span style="color: var(--teal);">▲ +5.3% CAGR 2011–2014</span>. Only 2014 → <span style="color: var(--coral);">▼ −1.3% vs 2013</span>. A matching colour measure turns the text green or red, and the arrow says the same thing in words. (Code shortened.)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 Design -->
+  <section class="cs-section" id="design" aria-labelledby="s6">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num">Step 6 · Design</span>
+        <h2 id="s6">One theme and one grid on every page</h2>
+      </div>
+      <div class="cs-body">
+        <div>
+          <p>Every page follows the same layout: a navy header with the title and page buttons, a filter bar (Year, Channel, Product Group, Producer), a row of KPI tiles, then charts and tables. Filters are synced, so a selection follows you from page to page.</p>
+          <div class="swatches">
+            <span class="swatch"><i style="background:#1b2a47"></i>Navy · headers</span>
+            <span class="swatch"><i style="background:#1f4e79"></i>Deep blue · main series</span>
+            <span class="swatch"><i style="background:#2a9d8f"></i>Teal · profit &amp; growth</span>
+            <span class="swatch"><i style="background:#f4a340"></i>Amber · margin lines</span>
+            <span class="swatch"><i style="background:#e07a5f"></i>Coral · decline &amp; losses</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="sub-h">Problems hit, and how they were solved</h3>
+          <ul class="issues">
+            <li><b>Numbers loaded as text</b><span>Typed every column in Power Query.</span></li>
+            <li><b>Measures lost after a save</b><span>Recreated them and saved as a Power BI project (PBIP).</span></li>
+            <li><b>One error cell broke the refresh</b><span>Error cells become blanks and are flagged.</span></li>
+            <li><b>Building visuals by hand was slow</b><span>Generated pages from a script and a theme file.</span></li>
+            <li><b>Page buttons did not render</b><span>Replaced them with a built-in page navigator.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pages -->
+  <section class="cs-section" id="pages" aria-labelledby="pagesTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num">The report</span>
+        <h2 id="pagesTitle">Six pages, each answering one question</h2>
+        <p class="lead">Click any page to enlarge it.</p>
+      </div>
+      <div class="page-gallery">
+        <figure class="shot"><button type="button" data-full="sales-overview.jpg" data-caption="Overview — six KPI tiles, trend and growth, and where revenue comes from"><img src="sales-overview.jpg" alt="Overview page with KPI tiles, yearly trend, growth, channel share, product groups and top producers" loading="lazy"></button><figcaption><b>1 · Overview — how are we doing?</b><span>Revenue up each year to 2013, then −1.3% in 2014.</span></figcaption></figure>
+        <figure class="shot"><button type="button" data-full="sales-channels.jpg" data-caption="Channels — a scorecard of revenue, share, margin and growth per channel"><img src="sales-channels.jpg" alt="Channels page with a channel scorecard and product mix per channel" loading="lazy"></button><figcaption><b>2 · Channels — where do we sell?</b><span>A scorecard compares revenue, share, margin and growth per channel.</span></figcaption></figure>
+        <figure class="shot"><button type="button" data-full="sales-products.jpg" data-caption="Products — size, margin and growth per product group, year by year"><img src="sales-products.jpg" alt="Products page with a treemap, a size-versus-margin bubble chart and a year matrix" loading="lazy"></button><figcaption><b>3 · Products — what sells and what grows?</b><span>Size, margin and growth per product group, year by year.</span></figcaption></figure>
+        <figure class="shot"><button type="button" data-full="sales-producers.jpg" data-caption="Producers — the top 10 of 124 producers bring in 55% of revenue"><img src="sales-producers.jpg" alt="Producers page with a Pareto chart, a ranking table and margin versus average" loading="lazy"></button><figcaption><b>4 · Producers — who do we depend on?</b><span>A Pareto line shows the top 10 of 124 producers bring in 55%.</span></figcaption></figure>
+        <figure class="shot"><button type="button" data-full="sales-profitability.jpg" data-caption="Profitability — below-cost Coffee sales lose about €242K of profit"><img src="sales-profitability.jpg" alt="Profitability page with price versus cost, margin versus average and losses by producer" loading="lazy"></button><figcaption><b>5 · Profitability — where is margin lost?</b><span>Below-cost Coffee sales lose about €242K of profit.</span></figcaption></figure>
+        <figure class="shot"><button type="button" data-full="sales-data-quality.jpg" data-caption="Data Quality — live check results, audit notes and problem rows"><img src="sales-data-quality.jpg" alt="Data Quality page with check results, audit notes and tables of problem rows" loading="lazy"></button><figcaption><b>6 · Data Quality — can we trust it?</b><span>The checks recalculate on every refresh.</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Findings -->
+  <section class="cs-section" id="findings" aria-labelledby="findTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num">What the data says</span>
+        <h2 id="findTitle">Steady margin, slowing growth, heavy concentration</h2>
+      </div>
+      <div class="findings">
+        <div class="finding"><b>€50.4M</b><span>revenue over four years</span></div>
+        <div class="finding"><b>+5.3%</b><span>a year — but −1.3% in 2014</span></div>
+        <div class="finding"><b>26.6%</b><span>gross margin, flat every year</span></div>
+        <div class="finding"><b>93.5%</b><span>of revenue through convenience stores</span></div>
+        <div class="finding"><b>55%</b><span>from the top 10 of 124 producers</span></div>
+        <div class="finding"><b>€242K</b><span>profit lost on below-cost sales</span></div>
+      </div>
+
+      <h3 class="sub-h" style="margin-top: 48px;">Recommended next steps</h3>
+      <ul class="next-list">
+        <li><b>Fix the source cell</b><span>Correct the Volume value on row 3632 so that sale counts again.</span></li>
+        <li><b>Publish and schedule</b><span>Put the report in Power BI Service with a scheduled refresh.</span></li>
+        <li><b>Review Coffee pricing</b><span>Find out why 322 rows were sold below cost.</span></li>
+        <li><b>Add targets</b><span>Load budgets so each KPI shows actual vs plan.</span></li>
+      </ul>
+
+      <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top: 48px;">
+        <a class="btn btn-primary" href="index.html#contact">Talk to me about this project</a>
+        <a class="btn btn-ghost" href="index.html#projects">← Back to all projects</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Rishiram Kharel · Mülheim an der Ruhr</span>
+    <span class="mono"><a href="index.html">Home</a> · <a href="#top">Back to top ↑</a></span>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Report page preview">
+  <button class="lb-btn lb-close" type="button" aria-label="Close">✕</button>
+  <button class="lb-btn lb-prev" type="button" aria-label="Previous page">‹</button>
+  <figure><img id="lbImg" src="" alt=""><figcaption id="lbCap"></figcaption></figure>
+  <button class="lb-btn lb-next" type="button" aria-label="Next page">›</button>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
