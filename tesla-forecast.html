@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-en="Tesla Forecast Lab — Rishiram Kharel" data-de="Tesla-Prognoselabor — Rishiram Kharel">Tesla Forecast Lab — Rishiram Kharel</title>
+  <meta name="description" content="An Excel forecast of Tesla deliveries, revenue and gross profit to 2029, rebuilt as an interactive lab — and checked against what really happened.">
+  <meta property="og:title" content="Tesla Forecast Lab — Rishiram Kharel">
+  <meta property="og:description" content="Play with my Tesla delivery forecast and see how it compares with reality.">
+  <meta property="og:image" content="sales-overview.jpg">
+  <meta name="theme-color" content="#0b1524">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="alternate" hreflang="en" href="?lang=en">
+  <link rel="alternate" hreflang="de" href="?lang=de">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>(function(){var d=document.documentElement,th,lg;d.classList.add('js');
+try{th=localStorage.getItem('rk-theme');lg=localStorage.getItem('rk-lang');}catch(e){}
+if(th!=='light'&&th!=='dark'){th=window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}
+var q=null;try{q=new URLSearchParams(location.search).get('lang');}catch(e){}
+if(q==='de'||q==='en'){lg=q;}
+if(lg!=='de'&&lg!=='en'){lg=(navigator.language||'').toLowerCase().indexOf('de')===0?'de':'en';}
+d.setAttribute('data-theme',th);d.setAttribute('data-lang',lg);d.lang=lg;})();</script>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="index.html">
+      <img src="favicon.svg" alt="" width="34" height="34">
+      <span>Rishiram Kharel<small>SUPPLY CHAIN · LOGISTICS · DATA</small></span>
+    </a>
+    <ul class="nav-links" id="navLinks" data-open="false">
+      <li><a href="#question"><span data-l="en">The question</span><span data-l="de" lang="de">Die Frage</span></a></li>
+      <li><a href="#lab"><span data-l="en">The lab</span><span data-l="de" lang="de">Das Labor</span></a></li>
+      <li><a href="#reality"><span data-l="en">Reality check</span><span data-l="de" lang="de">Realitätscheck</span></a></li>
+      <li><a href="index.html#projects"><span data-l="en">All projects</span><span data-l="de" lang="de">Alle Projekte</span></a></li>
+      <li><a class="nav-cta" href="index.html#contact"><span data-l="en">Contact</span><span data-l="de" lang="de">Kontakt</span></a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="controls">
+        <div class="lang-switch" role="group" aria-label="Language / Sprache">
+          <button type="button" data-set-lang="en" aria-pressed="true" title="English">EN</button>
+          <button type="button" data-set-lang="de" aria-pressed="false" title="Deutsch">DE</button>
+        </div>
+        <button class="theme-toggle" type="button" id="themeToggle" aria-label="Toggle light and dark mode" title="Light / dark"><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks"><span data-l="en">Menu</span><span data-l="de" lang="de">Menü</span></button>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="cs-hero">
+    <div class="wrap">
+      <a class="crumb" href="index.html#projects">← <span data-l="en">Back to projects</span><span data-l="de" lang="de">Zurück zu den Projekten</span></a>
+      <p class="eyebrow" style="margin-top: 26px;"><span data-l="en">Excel · Forecasting · Case study</span><span data-l="de" lang="de">Excel · Prognose · Fallstudie</span></p>
+      <h1><span data-l="en">Tesla Forecast Lab</span><span data-l="de" lang="de">Tesla-Prognoselabor</span></h1>
+      <p class="lead"><span data-l="en">In a finance case study I built an Excel model that forecasts Tesla’s deliveries, revenue and gross profit from 2020 to 2029, using only what was known in December 2020. Here the model runs live in your browser: change the assumptions, then see how it held up against what really happened.</span><span data-l="de" lang="de">In einer Finanz-Fallstudie habe ich ein Excel-Modell gebaut, das Teslas Auslieferungen, Umsatz und Bruttogewinn von 2020 bis 2029 prognostiziert — nur mit dem Wissensstand von Dezember 2020. Hier läuft das Modell live im Browser: Ändern Sie die Annahmen und sehen Sie, wie gut es sich gegen die Realität geschlagen hat.</span></p>
+      <div class="cs-meta">
+        <span class="tag">Excel</span><span class="tag"><span data-l="en">Demand forecasting</span><span data-l="de" lang="de">Bedarfsprognose</span></span><span class="tag"><span data-l="en">Scenario analysis</span><span data-l="de" lang="de">Szenarioanalyse</span></span><span class="tag"><span data-l="en">Benchmarking</span><span data-l="de" lang="de">Benchmarking</span></span><span class="tag"><span data-l="en">Financial statements</span><span data-l="de" lang="de">Jahresabschlüsse</span></span>
+      </div>
+      <div class="findings" style="margin-top: 36px;">
+        <div class="finding"><b><span data-l="en">367K → 1.86M</span><span data-l="de" lang="de">367 Tsd. → 1,86 Mio.</span></b><span><span data-l="en">vehicles a year, 2019 → 2029 (base case)</span><span data-l="de" lang="de">Fahrzeuge pro Jahr, 2019 → 2029 (Basisfall)</span></span></div>
+        <div class="finding"><b><span data-l="en">$20.8B → $123.5B</span><span data-l="de" lang="de">20,8 → 123,5 Mrd. $</span></b><span><span data-l="en">automotive revenue, 2019 → 2029</span><span data-l="de" lang="de">Automobilumsatz, 2019 → 2029</span></span></div>
+        <div class="finding"><b><span data-l="en">6 models</span><span data-l="de" lang="de">6 Modelle</span></b><span><span data-l="en">each with its own price, margin and ramp-up curve</span><span data-l="de" lang="de">jeweils mit eigenem Preis, eigener Marge und Hochlaufkurve</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" id="question" aria-labelledby="qTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num"><span data-l="en">The question</span><span data-l="de" lang="de">Die Frage</span></span>
+        <h2 id="qTitle"><span data-l="en">Can a loss-making carmaker grow into its share price?</span><span data-l="de" lang="de">Kann ein Autobauer mit Verlusten in seinen Aktienkurs hineinwachsen?</span></h2>
+      </div>
+      <div class="cs-body">
+        <div>
+          <p><span data-l="en">In December 2020 Tesla’s share traded at $639.83, yet the company had lost money in every year from 2015 to 2019. To judge whether that price made sense, the case asked for a ten-year forecast of the core business: how many cars Tesla would deliver, at what price, and at what gross margin.</span><span data-l="de" lang="de">Im Dezember 2020 stand die Tesla-Aktie bei 639,83 $, obwohl das Unternehmen von 2015 bis 2019 jedes Jahr Verluste schrieb. Um zu beurteilen, ob dieser Preis Sinn ergibt, verlangte die Fallstudie eine Zehnjahresprognose des Kerngeschäfts: wie viele Autos Tesla ausliefert, zu welchem Preis und mit welcher Bruttomarge.</span></p>
+          <p><span data-l="en">I started with five years of annual reports. Revenue grew six-fold, and the operating loss almost disappeared. The part I found most interesting as a supply-chain person is working capital: stock on hand fell from <b>147 to 62 days</b>, and the cash cycle from <b>57 to 16 days</b>. Tesla got much better at turning parts into delivered cars.</span><span data-l="de" lang="de">Ich habe mit fünf Jahren Geschäftsberichten begonnen. Der Umsatz hat sich versechsfacht, der operative Verlust ist fast verschwunden. Am spannendsten fand ich als Supply-Chain-Mensch das Working Capital: Die Lagerreichweite sank von <b>147 auf 62 Tage</b>, der Cash-Zyklus von <b>57 auf 16 Tage</b>. Tesla wurde deutlich besser darin, Teile in ausgelieferte Autos zu verwandeln.</span></p>
+        </div>
+        <div>
+          <h3 class="sub-h"><span data-l="en">Starting point, 2015–2019</span><span data-l="de" lang="de">Ausgangslage, 2015–2019</span></h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th><span data-l="en">Year</span><span data-l="de" lang="de">Jahr</span></th><th class="num"><span data-l="en">Revenue</span><span data-l="de" lang="de">Umsatz</span></th><th class="num"><span data-l="en">Gross margin</span><span data-l="de" lang="de">Bruttomarge</span></th><th class="num"><span data-l="en">EBIT margin</span><span data-l="de" lang="de">EBIT-Marge</span></th><th class="num"><span data-l="en">Days of stock</span><span data-l="de" lang="de">Lagerreichweite (Tage)</span></th><th class="num"><span data-l="en">Cash cycle (days)</span><span data-l="de" lang="de">Cash-Zyklus (Tage)</span></th></tr></thead>
+              <tbody>
+<tr><td>2015</td><td class="num"><span data-l="en">$4.0B</span><span data-l="de" lang="de">4,0 Mrd. $</span></td><td class="num"><span data-l="en">22.8%</span><span data-l="de" lang="de">22,8 %</span></td><td class="num"><span data-l="en">−17.7%</span><span data-l="de" lang="de">−17,7 %</span></td><td class="num">147</td><td class="num">57</td></tr>
+<tr><td>2016</td><td class="num"><span data-l="en">$7.0B</span><span data-l="de" lang="de">7,0 Mrd. $</span></td><td class="num"><span data-l="en">22.8%</span><span data-l="de" lang="de">22,8 %</span></td><td class="num"><span data-l="en">−9.5%</span><span data-l="de" lang="de">−9,5 %</span></td><td class="num">138</td><td class="num">39</td></tr>
+<tr><td>2017</td><td class="num"><span data-l="en">$11.8B</span><span data-l="de" lang="de">11,8 Mrd. $</span></td><td class="num"><span data-l="en">18.9%</span><span data-l="de" lang="de">18,9 %</span></td><td class="num"><span data-l="en">−13.9%</span><span data-l="de" lang="de">−13,9 %</span></td><td class="num">85</td><td class="num">11</td></tr>
+<tr><td>2018</td><td class="num"><span data-l="en">$21.5B</span><span data-l="de" lang="de">21,5 Mrd. $</span></td><td class="num"><span data-l="en">18.8%</span><span data-l="de" lang="de">18,8 %</span></td><td class="num"><span data-l="en">−1.8%</span><span data-l="de" lang="de">−1,8 %</span></td><td class="num">64</td><td class="num">10</td></tr>
+<tr><td>2019</td><td class="num"><span data-l="en">$24.6B</span><span data-l="de" lang="de">24,6 Mrd. $</span></td><td class="num"><span data-l="en">16.6%</span><span data-l="de" lang="de">16,6 %</span></td><td class="num"><span data-l="en">−0.3%</span><span data-l="de" lang="de">−0,3 %</span></td><td class="num">62</td><td class="num">16</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="embed-note"><span data-l="en">Source: Tesla 10-K filings, as provided in the case. Cash cycle = days of stock + days to get paid − days to pay suppliers.</span><span data-l="de" lang="de">Quelle: Tesla-10-K-Berichte, wie in der Fallstudie bereitgestellt. Cash-Zyklus = Lagerreichweite + Forderungslaufzeit − Lieferantenziel.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" aria-labelledby="labTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num"><span data-l="en">The lab</span><span data-l="de" lang="de">Das Labor</span></span>
+        <h2 id="labTitle"><span data-l="en">Run the model yourself</span><span data-l="de" lang="de">Rechnen Sie selbst</span></h2>
+        <p class="lead"><span data-l="en">This is the same logic as my Excel workbook, rewritten in JavaScript and checked against it to the last car. The defaults are my base case.</span><span data-l="de" lang="de">Das ist dieselbe Logik wie in meiner Excel-Arbeitsmappe, in JavaScript neu geschrieben und bis aufs letzte Auto dagegen geprüft. Die Voreinstellungen sind mein Basisfall.</span></p>
+      </div>
+      <div class="lab" id="lab">
+        <div class="panel lab-controls" aria-label="Model assumptions">
+          <div>
+            <span class="ctrl-label"><span data-l="en">Scenario</span><span data-l="de" lang="de">Szenario</span></span>
+            <div class="seg" role="group" aria-label="Scenario">
+              <button type="button" data-scen="worst" aria-pressed="false"><span data-l="en">Worst</span><span data-l="de" lang="de">Schlecht</span></button>
+              <button type="button" data-scen="base" aria-pressed="true"><span data-l="en">Base</span><span data-l="de" lang="de">Basis</span></button>
+              <button type="button" data-scen="best" aria-pressed="false"><span data-l="en">Best</span><span data-l="de" lang="de">Gut</span></button>
+            </div>
+            <p class="ctrl-hint"><span data-l="en">Moves car prices by ±2%, and energy growth and margin by ±2 points.</span><span data-l="de" lang="de">Verschiebt Autopreise um ±2 % sowie Wachstum und Marge im Energiegeschäft um ±2 Punkte.</span></p>
+          </div>
+<div>
+          <label class="ctrl-label" for="g1"><span><span data-l="en">Growth after launch</span><span data-l="de" lang="de">Wachstum nach Marktstart</span></span><output id="g1Out">+10%</output></label>
+          <input type="range" id="g1" min="0" max="30" step="1" value="10">
+          <p class="ctrl-hint"><span data-l="en">Years 1–2 after a model’s ramp-up.</span><span data-l="de" lang="de">Jahre 1–2 nach dem Hochlauf eines Modells.</span></p>
+        </div>
+<div>
+          <label class="ctrl-label" for="g2"><span><span data-l="en">Growth, maturing</span><span data-l="de" lang="de">Wachstum, reifend</span></span><output id="g2Out">+8%</output></label>
+          <input type="range" id="g2" min="0" max="30" step="1" value="8">
+          <p class="ctrl-hint"><span data-l="en">Years 3–4.</span><span data-l="de" lang="de">Jahre 3–4.</span></p>
+        </div>
+<div>
+          <label class="ctrl-label" for="g3"><span><span data-l="en">Long-run growth</span><span data-l="de" lang="de">Langfristiges Wachstum</span></span><output id="g3Out">+4%</output></label>
+          <input type="range" id="g3" min="0" max="30" step="1" value="4">
+          <p class="ctrl-hint"><span data-l="en">Every year after that, and Model S / X all along.</span><span data-l="de" lang="de">Jedes Jahr danach — und für Model S / X durchgehend.</span></p>
+        </div>
+          <div class="readout" aria-live="polite">
+            <div><b id="roDeliv">1.9M</b><span><span data-l="en">deliveries in 2029</span><span data-l="de" lang="de">Auslieferungen 2029</span></span></div>
+            <div><b id="roRev">$123B</b><span><span data-l="en">automotive revenue 2029</span><span data-l="de" lang="de">Automobilumsatz 2029</span></span></div>
+            <div><b id="roGM">19.4%</b><span><span data-l="en">automotive gross margin 2029</span><span data-l="de" lang="de">Bruttomarge Automobil 2029</span></span></div>
+            <div><b id="roCagr">17.7%</b><span><span data-l="en">delivery growth a year, 2019–2029</span><span data-l="de" lang="de">Auslieferungswachstum p. a., 2019–2029</span></span></div>
+          </div>
+          <button class="link-btn" type="button" id="labReset"><span data-l="en">Reset to my base case</span><span data-l="de" lang="de">Auf meinen Basisfall zurücksetzen</span></button>
+        </div>
+        <div class="lab-charts">
+          <div class="panel">
+            <div class="panel-head"><h3><span data-l="en">Deliveries by model</span><span data-l="de" lang="de">Auslieferungen nach Modell</span></h3><div class="view-toggle" role="group" aria-label="View" data-view-for="deliv"><button type="button" data-view="chart" aria-pressed="true"><span data-l="en">Chart</span><span data-l="de" lang="de">Diagramm</span></button><button type="button" data-view="table" aria-pressed="false"><span data-l="en">Table</span><span data-l="de" lang="de">Tabelle</span></button></div></div>
+            <div class="panel-body"><div class="chart" id="delivChart"></div><div id="delivTable" hidden></div></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><h3><span data-l="en">Revenue and gross profit</span><span data-l="de" lang="de">Umsatz und Bruttogewinn</span></h3><div class="view-toggle" role="group" aria-label="View" data-view-for="rev"><button type="button" data-view="chart" aria-pressed="true"><span data-l="en">Chart</span><span data-l="de" lang="de">Diagramm</span></button><button type="button" data-view="table" aria-pressed="false"><span data-l="en">Table</span><span data-l="de" lang="de">Tabelle</span></button></div></div>
+            <div class="panel-body"><div class="chart" id="revChart"></div><div id="revTable" hidden></div></div>
+          </div>
+        </div>
+      </div>
+      <noscript><p class="callout" style="margin-top:18px"><span data-l="en">The lab needs JavaScript. The base case: 1.86M deliveries and $123.5B automotive revenue in 2029.</span><span data-l="de" lang="de">Das Labor braucht JavaScript. Der Basisfall: 1,86 Mio. Auslieferungen und 123,5 Mrd. $ Automobilumsatz im Jahr 2029.</span></p></noscript>
+    </div>
+  </section>
+
+  <section class="cs-section" id="assumptions" aria-labelledby="aTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num"><span data-l="en">Assumptions</span><span data-l="de" lang="de">Annahmen</span></span>
+        <h2 id="aTitle"><span data-l="en">How each number is built</span><span data-l="de" lang="de">Wie jede Zahl entsteht</span></h2>
+      </div>
+      <div class="cs-body">
+        <div>
+          <p><span data-l="en"><b>Volumes.</b> Model 3 grows 60% in 2020, then follows the growth ladder you set above. Model S / X is mature, so it only grows at the long-run rate. New models copy Model 3’s real launch curve: Model Y three years later, and Pickup and Semi from 250 test units in 2021. The Roadster starts at 500 cars in 2022.</span><span data-l="de" lang="de"><b>Mengen.</b> Model 3 wächst 2020 um 60 % und folgt dann der oben eingestellten Wachstumsleiter. Model S / X ist ausgereift und wächst nur mit der Langfristrate. Neue Modelle übernehmen die echte Hochlaufkurve von Model 3: Model Y drei Jahre später, Pickup und Semi ab 250 Testfahrzeugen im Jahr 2021. Der Roadster startet 2022 mit 500 Autos.</span></p>
+          <p><span data-l="en"><b>Prices and margins.</b> Existing models use Tesla’s own average price and historic gross margin. For new models without a history, I benchmarked a comparable group of manufacturers, the way a buyer would benchmark a new supplier.</span><span data-l="de" lang="de"><b>Preise und Margen.</b> Bestehende Modelle nutzen Teslas eigenen Durchschnittspreis und die historische Bruttomarge. Für neue Modelle ohne Historie habe ich eine Vergleichsgruppe von Herstellern herangezogen — so wie ein Einkäufer einen neuen Lieferanten benchmarkt.</span></p>
+          <p><span data-l="en"><b>Scenarios.</b> Best and worst cases move prices by 2% (roughly one year of inflation) and change energy growth and margin by 2 points.</span><span data-l="de" lang="de"><b>Szenarien.</b> Der gute und der schlechte Fall verschieben die Preise um 2 % (etwa ein Jahr Inflation) und ändern Wachstum und Marge im Energiegeschäft um 2 Punkte.</span></p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th><span data-l="en">Model</span><span data-l="de" lang="de">Modell</span></th><th class="num"><span data-l="en">Avg. price</span><span data-l="de" lang="de">Ø-Preis</span></th><th class="num"><span data-l="en">Gross margin</span><span data-l="de" lang="de">Bruttomarge</span></th><th><span data-l="en">Margin based on</span><span data-l="de" lang="de">Marge basiert auf</span></th></tr></thead>
+            <tbody>
+<tr><td>Model 3</td><td class="num"><span data-l="en">$54,157</span><span data-l="de" lang="de">54.157 $</span></td><td class="num"><span data-l="en">22.3%</span><span data-l="de" lang="de">22,3 %</span></td><td><span data-l="en">Tesla automotive history</span><span data-l="de" lang="de">Tesla-Historie Automobil</span></td></tr>
+<tr><td>Model S / X</td><td class="num"><span data-l="en">$102,053</span><span data-l="de" lang="de">102.053 $</span></td><td class="num"><span data-l="en">22.3%</span><span data-l="de" lang="de">22,3 %</span></td><td><span data-l="en">Tesla automotive history</span><span data-l="de" lang="de">Tesla-Historie Automobil</span></td></tr>
+<tr><td>Model Y</td><td class="num"><span data-l="en">$61,000</span><span data-l="de" lang="de">61.000 $</span></td><td class="num"><span data-l="en">15.6%</span><span data-l="de" lang="de">15,6 %</span></td><td><span data-l="en">Mass-market carmakers (GM, Ford, FCA, VW)</span><span data-l="de" lang="de">Volumenhersteller (GM, Ford, FCA, VW)</span></td></tr>
+<tr><td>Roadster</td><td class="num"><span data-l="en">$225,000</span><span data-l="de" lang="de">225.000 $</span></td><td class="num"><span data-l="en">44.1%</span><span data-l="de" lang="de">44,1 %</span></td><td><span data-l="en">Luxury sports cars (Ferrari)</span><span data-l="de" lang="de">Luxus-Sportwagen (Ferrari)</span></td></tr>
+<tr><td>Pickup (Cybertruck)</td><td class="num"><span data-l="en">$58,400</span><span data-l="de" lang="de">58.400 $</span></td><td class="num"><span data-l="en">15.6%</span><span data-l="de" lang="de">15,6 %</span></td><td><span data-l="en">Mass-market carmakers</span><span data-l="de" lang="de">Volumenhersteller</span></td></tr>
+<tr><td>Semi</td><td class="num"><span data-l="en">$175,000</span><span data-l="de" lang="de">175.000 $</span></td><td class="num"><span data-l="en">20.2%</span><span data-l="de" lang="de">20,2 %</span></td><td><span data-l="en">Truck makers (Scania, MAN, Paccar)</span><span data-l="de" lang="de">Lkw-Hersteller (Scania, MAN, Paccar)</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" id="reality" aria-labelledby="rTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num"><span data-l="en">Reality check</span><span data-l="de" lang="de">Realitätscheck</span></span>
+        <h2 id="rTitle"><span data-l="en">How did the forecast do?</span><span data-l="de" lang="de">Wie gut war die Prognose?</span></h2>
+        <p class="lead"><span data-l="en">A forecast is only useful if you check it. Tesla has since reported six full years of deliveries, so I put my base case next to them.</span><span data-l="de" lang="de">Eine Prognose ist nur nützlich, wenn man sie überprüft. Tesla hat inzwischen sechs volle Jahre Auslieferungen gemeldet, also habe ich meinen Basisfall daneben gelegt.</span></p>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3><span data-l="en">Deliveries: model vs actual</span><span data-l="de" lang="de">Auslieferungen: Modell vs. Ist</span></h3><div class="view-toggle" role="group" aria-label="View" data-view-for="real"><button type="button" data-view="chart" aria-pressed="true"><span data-l="en">Chart</span><span data-l="de" lang="de">Diagramm</span></button><button type="button" data-view="table" aria-pressed="false"><span data-l="en">Table</span><span data-l="de" lang="de">Tabelle</span></button></div></div>
+        <div class="panel-body"><div class="chart" id="realChart"></div><div id="realTable" hidden></div></div>
+      </div>
+      <div class="findings" style="margin-top: 18px;">
+        <div class="finding"><b><span data-l="en">+10.5%</span><span data-l="de" lang="de">+10,5 %</span></b><span><span data-l="en">too high in 2020 — the pandemic year</span><span data-l="de" lang="de">zu hoch im Jahr 2020 — dem Pandemiejahr</span></span></div>
+        <div class="finding"><b><span data-l="en">−29.5%</span><span data-l="de" lang="de">−29,5 %</span></b><span><span data-l="en">too low at the 2023 peak: Model Y ramped far faster than Model 3 did</span><span data-l="de" lang="de">zu niedrig im Spitzenjahr 2023: Model Y lief viel schneller hoch als Model 3</span></span></div>
+        <div class="finding"><b><span data-l="en">−7%</span><span data-l="de" lang="de">−7 %</span></b><span><span data-l="en">off in 2025, as the market cooled and actual sales fell</span><span data-l="de" lang="de">Abweichung 2025, als der Markt abkühlte und die Verkäufe sanken</span></span></div>
+      </div>
+      <div class="cs-body" style="margin-top: 28px;">
+        <p class="callout"><span data-l="en"><b>What I take from it:</b> copying Model 3’s launch curve made the model too cautious in the boom years. Tesla had learned to build factories faster, so Model Y did not need three slow years. A better model would put a learning effect on each new launch, and update the forecast every quarter instead of once.</span><span data-l="de" lang="de"><b>Meine Erkenntnis:</b> Die Hochlaufkurve von Model 3 zu kopieren, machte das Modell in den Boomjahren zu vorsichtig. Tesla hatte gelernt, Fabriken schneller hochzufahren — Model Y brauchte keine drei langsamen Jahre. Ein besseres Modell würde jedem neuen Marktstart einen Lerneffekt geben und die Prognose jedes Quartal statt einmal aktualisieren.</span></p>
+        <p class="embed-note" style="margin:0"><span data-l="en">Actual deliveries: Tesla production and delivery reports (SEC 8-K filings for 2020–2021; press coverage of Tesla’s reports for 2022–2025).</span><span data-l="de" lang="de">Tatsächliche Auslieferungen: Teslas Produktions- und Auslieferungsberichte (SEC-8-K-Meldungen für 2020–2021; Presseberichte zu Teslas Meldungen für 2022–2025).</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs-section" aria-labelledby="lTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num"><span data-l="en">Why it matters for supply chain</span><span data-l="de" lang="de">Warum das für die Supply Chain zählt</span></span>
+        <h2 id="lTitle"><span data-l="en">The same skills I use in demand planning</span><span data-l="de" lang="de">Dieselben Fähigkeiten wie in der Bedarfsplanung</span></h2>
+      </div>
+      <ul class="next-list">
+        <li><b><span data-l="en">Forecast by item, not in total</span><span data-l="de" lang="de">Je Artikel prognostizieren, nicht in Summe</span></b><span><span data-l="en">Each model has its own life cycle — just like SKUs in a warehouse.</span><span data-l="de" lang="de">Jedes Modell hat seinen eigenen Lebenszyklus — wie Artikel im Lager.</span></span></li>
+        <li><b><span data-l="en">Use analogues for new products</span><span data-l="de" lang="de">Analogien für neue Produkte nutzen</span></b><span><span data-l="en">With no history, borrow a similar product’s curve and benchmark a peer group.</span><span data-l="de" lang="de">Ohne Historie die Kurve eines ähnlichen Produkts nutzen und eine Vergleichsgruppe benchmarken.</span></span></li>
+        <li><b><span data-l="en">Plan in scenarios</span><span data-l="de" lang="de">In Szenarien planen</span></b><span><span data-l="en">A range is more honest than one number, and shows where the risk sits.</span><span data-l="de" lang="de">Eine Bandbreite ist ehrlicher als eine Zahl und zeigt, wo das Risiko liegt.</span></span></li>
+        <li><b><span data-l="en">Measure forecast error</span><span data-l="de" lang="de">Prognosefehler messen</span></b><span><span data-l="en">Comparing plan with actuals is how a forecast gets better.</span><span data-l="de" lang="de">Plan und Ist zu vergleichen ist der Weg zu besseren Prognosen.</span></span></li>
+      </ul>
+      <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top: 48px;">
+        <a class="btn btn-primary" href="index.html#contact"><span data-l="en">Talk to me about this project</span><span data-l="de" lang="de">Sprechen Sie mich zu diesem Projekt an</span></a>
+        <a class="btn btn-ghost" href="saldi-ledger.html"><span data-l="en">Next: the Saldi ledger</span><span data-l="de" lang="de">Weiter: das Saldi-Hauptbuch</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Rishiram Kharel · Mülheim an der Ruhr</span>
+    <span class="mono"><a href="index.html"><span data-l="en">Home</span><span data-l="de" lang="de">Startseite</span></a> · <a href="#top"><span data-l="en">Back to top ↑</span><span data-l="de" lang="de">Nach oben ↑</span></a></span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script src="viz.js"></script>
+<script src="tesla-model.js"></script>
+<script src="tesla.js"></script>
+</body>
+</html>

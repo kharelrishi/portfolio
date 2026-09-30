@@ -20,6 +20,7 @@
     });
     document.querySelectorAll("[data-set-lang]").forEach(b =>
       b.setAttribute("aria-pressed", String(b.dataset.setLang === lg)));
+    document.dispatchEvent(new Event("rk:lang"));
   }
   document.querySelectorAll("[data-set-lang]").forEach(b => b.addEventListener("click", () => {
     applyLang(b.dataset.setLang);

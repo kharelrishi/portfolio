@@ -8,6 +8,9 @@ Personal portfolio website: supply chain & logistics operations, with data analy
 
 - `index.html` — home page: profile, career route, experience, projects, skills, education, contact
 - `sales-dashboard.html` — case study: how the Sales Performance Dashboard (Power BI) was built
+- `tesla-forecast.html` — Tesla Forecast Lab: my Excel delivery/revenue forecast to 2029, running live (`tesla-model.js` is a port of the workbook, `tesla.js` wires the controls), plus a forecast-vs-actual check
+- `saldi-ledger.html` — Saldi Ledger: a financial year booked in 15 transactions, with a step-through balance sheet, P&L bridge and KPIs (`saldi.js`)
+- `viz.js` — small dependency-free SVG charts used by the case studies (theme- and language-aware)
 - `style.css`, `main.js` — styles and small interactions (no framework, no build step)
 - `sales-*.jpg` — report page screenshots · `Rishiram_Kharel_CV.pdf` (EN) · `Rishiram_Kharel_Lebenslauf.pdf` (DE) · `favicon.svg`
 
