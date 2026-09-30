@@ -2,7 +2,7 @@
 
 Personal portfolio website: supply chain & logistics operations, with data analysis in Power BI.
 
-**Live:** _coming soon on Vercel_
+**Live:** https://kharelrishi.github.io/portfolio/ (GitHub Pages)
 
 ## What's inside
 
@@ -21,7 +21,11 @@ It's a static site — open `index.html` in a browser, or serve the folder:
 python3 -m http.server 8000
 ```
 
-## Deploy to Vercel
+## Hosting
+
+Published with GitHub Pages from the `main` branch (root). Every push to `main` updates the live site within a minute or two.
+
+### Optional: deploy to Vercel instead
 
 1. Go to vercel.com → **Add New… → Project** and import this GitHub repository.
 2. Framework preset: **Other**. Leave the build command and output directory empty.
