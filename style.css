@@ -313,6 +313,12 @@ section { padding-block: clamp(64px, 9vw, 110px); }
 .cp-card ul { margin: 14px 0 0; padding-left: 18px; color: var(--body-text); }
 .cp-card li { margin-bottom: 6px; }
 .cp-card li::marker { color: var(--amber); }
+.cp-intro { margin-top: 10px; color: var(--body-text); font-size: 0.95rem; font-style: italic; }
+.cp-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 32px; margin-top: 16px; }
+.cp-group ul { margin-top: 6px; }
+.cp-label { font-family: var(--mono); font-size: 0.74rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--amber); margin: 0; }
+.cp-tools { margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--line); font-size: 0.88rem; color: var(--muted); }
+.cp-tools-label { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-right: 8px; }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
 .tag { font-family: var(--mono); font-size: 0.72rem; padding: 4px 9px; border-radius: 6px; background: var(--raised); color: var(--muted); border: 1px solid var(--line-soft); }
 .cp-status { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 3px 8px; border-radius: 5px; margin-left: 10px; vertical-align: middle; background: var(--teal-soft); color: var(--teal); }
@@ -693,6 +699,7 @@ input[type="range"] { width: 100%; accent-color: var(--amber); margin-top: 8px; 
   .lang { grid-template-columns: 70px 1fr auto; }
   .cp-when { white-space: normal; }
   .cp-card { padding: 18px; }
+  .cp-groups { grid-template-columns: 1fr; }
   .checkpoint { padding-left: 38px; }
 }
 @media (prefers-reduced-motion: reduce) {
